@@ -25,34 +25,36 @@ export const App = () => {
     }, 6500);
   });
   return (
-    <BrowserRouter>
+    <>
       {isLoading ? (
         <InitialLoader />
       ) : (
-        <motion.div
-          className="relative z-0 bg-primary"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-        >
-          <div className="absolute z-20 pointer-events-none">
-            <Cursor />
-          </div>
-          <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
-            <Navbar />
-            <Hero />
-          </div>
-          <About />
-          <Experience />
-          <Tech />
-          {/* <Works />
+        <BrowserRouter>
+          <motion.div
+            className="relative z-0 bg-primary"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+          >
+            <div className="absolute z-20 pointer-events-none">
+              <Cursor />
+            </div>
+            <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
+              <Navbar />
+              <Hero />
+            </div>
+            <About />
+            <Experience />
+            <Tech />
+            {/* <Works />
         <Feedbacks /> */}
-          {/* <div className="relative z-0">
+            {/* <div className="relative z-0">
           <Contact />
           <Stars />
         </div> */}
-        </motion.div>
+          </motion.div>
+        </BrowserRouter>
       )}
-    </BrowserRouter>
+    </>
   );
 };
