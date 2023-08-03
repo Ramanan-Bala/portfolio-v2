@@ -17,14 +17,6 @@ body {
   background-color: #050816;
 }
 
-.service-card div {
-  transition: filter 0.3s ease-in-out;
-}
-
-.service-card:hover div:not(:hover) {
-  filter: blur(2px);
-}
-
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
@@ -231,7 +223,7 @@ svg.hero-name text {
   color: #915eff;
   font-family: "Lora", serif;
   font-weight: 700;
-  stroke: #915eff;
+  stroke: #804dee;
   /* stroke: #08fdd8; */
   stroke-linecap: round;
   stroke-miterlimit: 10;
@@ -253,4 +245,12 @@ svg.hero-name text {
     stroke-dashoffset: -20%;
     fill: hsla(189, 68%, 75%, 0%);
   }
+}
+
+.service-card div {
+  transition: filter 0.3s ease-in-out;
+}
+
+.service-card:hover div:not(:hover) {
+  filter: blur(2px);
 }

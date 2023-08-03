@@ -8,6 +8,7 @@ import {
   Hero,
   InitialLoader,
   Navbar,
+  Social,
   Tech,
   // Works,
   // Stars,
@@ -39,6 +40,7 @@ export const App = () => {
             <div className="absolute z-20 pointer-events-none">
               <Cursor />
             </div>
+            <Social />
             <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
               <Navbar />
               <Hero />

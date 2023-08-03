@@ -1,0 +1,62 @@
+.float {
+  @apply md:flex hidden;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  padding-bottom: 0;
+
+  position: fixed;
+  bottom: 0;
+  z-index: 3;
+}
+
+.line {
+  height: 75px;
+  border: 0.5px solid #ffffff;
+}
+
+.social {
+  left: 50px;
+}
+
+.social svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.social svg,
+.social svg path,
+.mail span {
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+}
+
+.social svg:hover {
+  transform: scale(1.5);
+}
+
+.social svg:hover:not(.npm) > path {
+  @apply stroke-green;
+}
+
+.social .npm:hover > path {
+  @apply fill-green;
+}
+
+.mail {
+  right: 50px;
+  padding: 0;
+}
+
+.mail span {
+  @apply text-gray text-xs;
+  font-family: "Poppins";
+  letter-spacing: 0.05em;
+  writing-mode: vertical-rl;
+  text-align: center;
+}
+
+.mail span:hover {
+  @apply text-green;
+}
