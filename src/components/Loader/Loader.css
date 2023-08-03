@@ -1,0 +1,93 @@
+.logoAnimate {
+  @apply grid place-content-center h-screen w-screen;
+}
+.logoAnimate svg {
+  width: 100px;
+  height: 100px;
+}
+
+.loader {
+  /* clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%); */
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); */
+
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.loader__wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+.loader__words {
+  position: relative;
+  overflow: hidden;
+  height: 21rem;
+  color: aliceblue;
+}
+
+/* .loader__wordsGroup {
+     transform: translateY(-80%);
+   } */
+
+.loader__overlay {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(
+    to bottom,
+    #0508169e,
+    #0508169e 47%,
+    transparent,
+    transparent 47%,
+    transparent,
+    transparent 55%,
+    #0508169e 50%,
+    #0508169e
+  );
+}
+
+.loader__word {
+  display: block;
+  font-size: 1.3rem;
+}
+
+.loader__progressWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5vh;
+  width: 100%;
+  z-index: 3;
+}
+
+.loader__progress {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.loader__progressNumber {
+  position: absolute;
+  left: -5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  white-space: nowrap;
+  color: white;
+  font-size: 3.2rem;
+}

@@ -11,7 +11,7 @@ const ServiceCard = ({ index, title, icon }) => {
     <Tilt>
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+        className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card cursor-pointer"
       >
         <div
           // options={{ max: 45, scale: 1, speed: 450 }}
@@ -44,7 +44,7 @@ const AboutSection = () => {
     return () => clearInterval(intervalID);
   });
   return (
-    <>
+    <div className="h-screen">
       <motion.div variants={textVariant(0)}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
@@ -60,7 +60,7 @@ const AboutSection = () => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
