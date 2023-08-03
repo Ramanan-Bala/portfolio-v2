@@ -58,7 +58,7 @@ const ExperienceSection = () => {
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
       </motion.div>
       <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
+        <VerticalTimeline lineColor="linear-gradient(-180deg,#804dee 0%,rgb(236, 64, 122) 60%,rgb(253, 216, 53) 70%,rgb(253, 216, 53, 0) 100%)">
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />
           ))}

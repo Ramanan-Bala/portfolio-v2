@@ -31,6 +31,9 @@ import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
 import pk from "./company/pk.png";
+import simplyDoc from "./company/simplyDoc.jpeg";
+import streetVendors from "./company/sv.png";
+import attendance from "./company/attendance.png";
 import angular from "./angular.png";
 import vue from "./vue.png";
 import express from "./express.png";
@@ -74,4 +77,7 @@ export {
   mysql,
   python,
   java,
+  simplyDoc,
+  streetVendors,
+  attendance,
 };

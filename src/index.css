@@ -17,6 +17,14 @@ body {
   background-color: #050816;
 }
 
+.service-card div {
+  transition: filter 0.3s ease-in-out;
+}
+
+.service-card:hover div:not(:hover) {
+  filter: blur(2px);
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
@@ -43,14 +51,26 @@ body {
   background: -webkit-linear-gradient(
     -90deg,
     #804dee 0%,
-    rgba(60, 51, 80, 0) 100%
+    rgb(236, 64, 122) 60%,
+    rgb(253, 216, 53) 70%,
+    rgb(253, 216, 53, 0) 100%
   );
 }
 
 .green-pink-gradient {
   background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  background: linear-gradient(
+    -90deg,
+    #804dee 1.9%,
+    rgb(236, 64, 122) 50%,
+    rgb(253, 216, 53) 97.5%
+  );
+  background: -webkit-linear-gradient(
+    -90deg,
+    #804dee 1.9%,
+    rgb(236, 64, 122) 50%,
+    rgb(253, 216, 53) 97.5%
+  );
 }
 
 .orange-text-gradient {

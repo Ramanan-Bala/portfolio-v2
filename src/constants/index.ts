@@ -30,6 +30,9 @@ import {
   mysql,
   python,
   java,
+  simplyDoc,
+  streetVendors,
+  attendance,
 } from "../assets";
 
 export const navLinks = [
@@ -131,10 +134,49 @@ const technologies = [
 
 const experiences = [
   {
+    title: "SimplyDoc",
+    company_name: "FandaTech - Frontend Developer",
+    icon: simplyDoc,
+    iconBg: "#383E56",
+    date: "Oct 2021 - Apr 2022",
+    points: [
+      "Multi-tenant application in which doctors and hospitals can onboard by admin and update their availability schedule.",
+      "On the other hand, patients can register and search specialty and doctors/hospitals by geographical area for the medical appointments.",
+      "Used Angular, NgZorro for Front-end",
+      "Role-based user login.",
+      "Pagination, Sorting, and Searching with debounce for increasing performance and reduce load on both server and client side.",
+    ],
+  },
+  {
+    title: "Street Vendors",
+    company_name: "FandaTech - Frontend Developer",
+    icon: streetVendors,
+    iconBg: "#E6DEDD",
+    date: "July 2022 - Oct 2022",
+    points: [
+      "Multi-tenant application in which members onboard by admin and update their shop and family and personal details.",
+      "On the other hand, admin can add news about their daily works that can be seen by everyone",
+    ],
+  },
+  {
+    title: "Attendance Management System",
+    company_name: "For Panimalar Engg. College - Backend Developer",
+    icon: attendance,
+    iconBg: "#383E56",
+    date: "Feb 2023 - Mar 2023",
+    points: [
+      "Multi-tenant application in which mentors onboard by admin and add attendance to their students assigned by the admin.",
+      "Admins can add students and mentors and assign mentors to students.",
+      "Mentors add attendance to their students and can view the attendance of their students.",
+      "Mentors can download the analytic of student attendance based on multiple filters.",
+      "Pagination, Sorting, and Searching with debounce for increasing performance and reduce load on both server and client side.",
+    ],
+  },
+  {
     title: "Full Stack Developer",
     company_name: "PK Innovatives - Project Intern",
     icon: pk,
-    iconBg: "#383E56",
+    iconBg: "#E6DEDD",
     date: "JUNE 2023 - Present",
     points: [
       "Working in an Attendance and Inventory Management project as a Full-stack developer.",

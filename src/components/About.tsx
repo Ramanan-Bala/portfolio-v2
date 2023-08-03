@@ -44,7 +44,7 @@ const AboutSection = () => {
     return () => clearInterval(intervalID);
   });
   return (
-    <div>
+    <>
       <motion.div variants={textVariant(0)}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
@@ -55,12 +55,12 @@ const AboutSection = () => {
       >
         {description[content]}
       </motion.p>
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-20 flex flex-wrap gap-10 service-card max-w-fit">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
