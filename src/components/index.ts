@@ -10,6 +10,7 @@ import { Feedbacks } from "./Feedbacks";
 import { Contact } from "./Contact";
 import { InitialLoader } from "./Loader/Loader";
 import { Cursor } from "./Cursor/Cursor";
+import { Blob } from "./Cursor/Blob";
 
 export {
   Hero,
@@ -26,5 +27,6 @@ export {
   Stars,
   InitialLoader,
   Cursor,
+  Blob,
   Social,
 };

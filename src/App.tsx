@@ -2,16 +2,17 @@ import { BrowserRouter } from "react-router-dom";
 import {
   About,
   Cursor,
-  // Contact,
+  Contact,
   Experience,
   // Feedbacks,
   Hero,
   InitialLoader,
   Navbar,
   Social,
-  Tech,
+  // Tech,
   // Works,
-  // Stars,
+  Stars,
+  Blob,
 } from "./components";
 import { useEffect, useState } from "react";
 
@@ -37,23 +38,28 @@ export const App = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
           >
-            <div className="absolute z-20 pointer-events-none">
+            <div className="absolute  pointer-events-none">
               <Cursor />
+              <Blob />
             </div>
             <Social />
-            <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
-              <Navbar />
+            <section className="">
+              <div className="fixed top-0 w-full z-10">
+                <Navbar />
+              </div>
               <Hero />
+            </section>
+            <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat py-12">
+              <About />
             </div>
-            <About />
             <Experience />
-            <Tech />
+            {/* <Tech /> */}
             {/* <Works />
         <Feedbacks /> */}
-            {/* <div className="relative z-0">
-          <Contact />
-          <Stars />
-        </div> */}
+            <div className="relative z-0">
+              <Contact />
+              <Stars />
+            </div>
           </motion.div>
         </BrowserRouter>
       )}

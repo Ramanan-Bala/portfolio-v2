@@ -50,6 +50,7 @@ export const Cursor = () => {
               backgroundColor: "#f2f2f2",
               x: mousePos.x - 4,
               y: mousePos.y - 4,
+              zIndex: 9999,
             }}
             transition={{
               type: "spring",
@@ -70,6 +71,7 @@ export const Cursor = () => {
                 borderRadius: "100%",
                 x: mousePos.x - 14,
                 y: mousePos.y - 14,
+                zIndex: 9999,
               },
               pointer: {
                 opacity: 0.2,
@@ -81,6 +83,7 @@ export const Cursor = () => {
                 borderRadius: "100%",
                 x: mousePos.x - 26,
                 y: mousePos.y - 26,
+                zIndex: 9999,
               },
             }}
             transition={{

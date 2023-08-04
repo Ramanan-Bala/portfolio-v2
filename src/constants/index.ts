@@ -126,36 +126,25 @@ const technologies = [
     name: "MongoDB",
     icon: mongodb,
   },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
+  // {
+  //   name: "Three JS",
+  //   icon: threejs,
+  // },
 ];
 
 const experiences = [
   {
-    title: "SimplyDoc",
-    company_name: "FandaTech - Frontend Developer",
-    icon: simplyDoc,
-    iconBg: "#383E56",
-    date: "Oct 2021 - Apr 2022",
-    points: [
-      "Multi-tenant application in which doctors and hospitals can onboard by admin and update their availability schedule.",
-      "On the other hand, patients can register and search specialty and doctors/hospitals by geographical area for the medical appointments.",
-      "Used Angular, NgZorro for Front-end",
-      "Role-based user login.",
-      "Pagination, Sorting, and Searching with debounce for increasing performance and reduce load on both server and client side.",
-    ],
-  },
-  {
-    title: "Street Vendors",
-    company_name: "FandaTech - Frontend Developer",
-    icon: streetVendors,
+    title: "Full Stack Developer",
+    company_name: "PK Innovatives - Project Intern",
+    icon: pk,
     iconBg: "#E6DEDD",
-    date: "July 2022 - Oct 2022",
+    date: "JUNE 2023 - Present",
     points: [
-      "Multi-tenant application in which members onboard by admin and update their shop and family and personal details.",
-      "On the other hand, admin can add news about their daily works that can be seen by everyone",
+      "Working in an Attendance and Inventory Management project as a Full-stack developer.",
+      "Used Angular, NgZorro for Front-end and NodeJs, Express, SQLite for the back-end.",
+      "JWT authentication and Role-based user login.",
+      "Pagination, Sorting, and Searching with debounce for increasing performance and reduce load on both server and client side.",
+      "Final Report generation and can be downloaded as excel or pdf.",
     ],
   },
   {
@@ -173,19 +162,31 @@ const experiences = [
     ],
   },
   {
-    title: "Full Stack Developer",
-    company_name: "PK Innovatives - Project Intern",
-    icon: pk,
+    title: "Street Vendors",
+    company_name: "FandaTech - Frontend Developer",
+    icon: streetVendors,
     iconBg: "#E6DEDD",
-    date: "JUNE 2023 - Present",
+    date: "July 2022 - Oct 2022",
     points: [
-      "Working in an Attendance and Inventory Management project as a Full-stack developer.",
-      "Used Angular, NgZorro for Front-end and NodeJs, Express, SQLite for the back-end.",
-      "JWT authentication and Role-based user login.",
-      "Pagination, Sorting, and Searching with debounce for increasing performance and reduce load on both server and client side.",
-      "Final Report generation and can be downloaded as excel or pdf.",
+      "Multi-tenant application in which members onboard by admin and update their shop and family and personal details.",
+      "On the other hand, admin can add news about their daily works that can be seen by everyone",
     ],
   },
+  {
+    title: "SimplyDoc",
+    company_name: "FandaTech - Frontend Developer",
+    icon: simplyDoc,
+    iconBg: "#383E56",
+    date: "Oct 2021 - Apr 2022",
+    points: [
+      "Multi-tenant application in which doctors and hospitals can onboard by admin and update their availability schedule.",
+      "On the other hand, patients can register and search specialty and doctors/hospitals by geographical area for the medical appointments.",
+      "Used Angular, NgZorro for Front-end",
+      "Role-based user login.",
+      "Pagination, Sorting, and Searching with debounce for increasing performance and reduce load on both server and client side.",
+    ],
+  },
+
   // {
   //   title: "React Native Developer",
   //   company_name: "Tesla",

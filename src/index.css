@@ -254,3 +254,30 @@ svg.hero-name text {
 .service-card:hover div:not(:hover) {
   filter: blur(2px);
 }
+
+.vertical-timeline-element-content {
+  box-shadow: 0 3px 0 #804dee !important;
+}
+
+#blob {
+  animation: rotation 20s infinite;
+}
+
+@keyframes rotation {
+  from {
+    /* rotate: 0deg; */
+  }
+  50% {
+    scale: 1 1.5;
+  }
+  to {
+    /* rotate: 360deg; */
+  }
+}
+
+.timeline-entry {
+  z-index: 2;
+  background: hsl(88, 25%, 11%, 0.2);
+  backdrop-filter: saturate(180%) blur(40px);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+}

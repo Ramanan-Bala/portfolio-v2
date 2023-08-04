@@ -7,9 +7,6 @@
 }
 
 .loader {
-  /* clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%); */
-  /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); */
-
   height: 100%;
   width: 100%;
 
@@ -36,10 +33,6 @@
   height: 21rem;
   color: aliceblue;
 }
-
-/* .loader__wordsGroup {
-     transform: translateY(-80%);
-   } */
 
 .loader__overlay {
   position: absolute;

@@ -11,6 +11,7 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import { ParticleContainer } from "./canvas";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -28,7 +29,7 @@ const ExperienceCard = ({ experience }) => {
           />
         </div>
       }
-      intersectionObserverProps={{ triggerOnce: false }}
+      // intersectionObserverProps={{ triggerOnce: false }}
     >
       <div>
         <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
@@ -53,6 +54,7 @@ const ExperienceCard = ({ experience }) => {
 const ExperienceSection = () => {
   return (
     <>
+      {/* <ParticleContainer /> */}
       <motion.div variants={textVariant(0)}>
         <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
@@ -68,4 +70,4 @@ const ExperienceSection = () => {
   );
 };
 
-export const Experience = SectionWrapper(ExperienceSection, "experience");
+export const Experience = SectionWrapper(ExperienceSection, "work");
