@@ -1,5 +1,5 @@
 import { Social } from "./Social/Social";
-import { Computers, Earth, Stars, Ball } from "./canvas";
+import { Computers, Earth, Ball } from "./canvas";
 import { Hero } from "./Hero";
 import { Navbar } from "./Navbar";
 import { About } from "./About";
@@ -24,7 +24,7 @@ export {
   Earth,
   Ball,
   Computers,
-  Stars,
+  // Stars,
   InitialLoader,
   Cursor,
   Blob,

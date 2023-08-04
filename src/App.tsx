@@ -11,12 +11,14 @@ import {
   Social,
   // Tech,
   // Works,
-  Stars,
+  // Stars,
   Blob,
 } from "./components";
 import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
+
+import "./stars.css";
 
 export const App = () => {
   const [isLoading, setLoading] = useState(true);
@@ -38,27 +40,32 @@ export const App = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
           >
-            <div className="absolute  pointer-events-none">
+            <div className="absolute pointer-events-none">
               <Cursor />
               <Blob />
             </div>
             <Social />
-            <section className="">
-              <div className="fixed top-0 w-full z-10">
-                <Navbar />
-              </div>
-              <Hero />
-            </section>
-            <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat py-12">
-              <About />
+            <div className="fixed top-0 w-full z-10">
+              <Navbar />
             </div>
-            <Experience />
-            {/* <Tech /> */}
-            {/* <Works />
+            <div className="card z-[-1] ">
+              <Hero />
+            </div>
+            <div className="bg-primary">
+              <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat py-12">
+                <About />
+              </div>
+              <Experience />
+              {/* <Tech /> */}
+              {/* <Works />
         <Feedbacks /> */}
-            <div className="relative z-0">
-              <Contact />
-              <Stars />
+              <div className="relative z-0 overflow-hidden">
+                <div id="stars"></div>
+                <div id="stars2"></div>
+                <div id="stars3"></div>
+                <Contact />
+                {/* <Stars /> */}
+              </div>
             </div>
           </motion.div>
         </BrowserRouter>
