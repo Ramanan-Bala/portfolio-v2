@@ -1,12 +1,26 @@
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
 
 export const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    window.onscroll = () => {
+      var current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - 200)
+          current = section.getAttribute("id");
+      });
+      setActive(current);
+    };
+  });
 
   return (
     <nav
@@ -21,7 +35,7 @@ export const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9" />
+          <img src={logo} alt="logo" className="w-14 h-14" />
           <p className="text-white text-[18px] flex font-bold cursor-pointer">
             Ramanan &nbsp;
             <span className="md:block hidden">| Full-Stack Developer</span>
@@ -32,9 +46,9 @@ export const Navbar = () => {
             <li
               key={link.id}
               className={`${
-                active === link.title ? "text-white" : "text-secondary"
+                active === link.id ? "text-white" : "text-secondary"
               } hover:text-white transition-all duration-300 cursor-pointer font-medium text-[18px]`}
-              onClick={() => setActive(link.title)}
+              onClick={() => setActive(link.id)}
             >
               <a href={`#${link.id}`}>{link.title}</a>
             </li>
@@ -57,10 +71,10 @@ export const Navbar = () => {
                 <li
                   key={link.id}
                   className={`${
-                    active === link.title ? "text-white" : "text-secondary"
+                    active === link.id ? "text-white" : "text-secondary"
                   } font-poppins font-medium cursor-pointer text-[16px]`}
                   onClick={() => {
-                    setActive(link.title);
+                    setActive(link.id);
                     setToggle(!toggle);
                   }}
                 >

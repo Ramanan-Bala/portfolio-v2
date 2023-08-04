@@ -54,8 +54,8 @@ export const Cursor = () => {
             }}
             transition={{
               type: "spring",
-              stiffness: 100,
-              damping: 25,
+              stiffness: 500,
+              damping: 50,
             }}
           ></motion.div>
           <motion.div
