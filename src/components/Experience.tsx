@@ -29,7 +29,7 @@ const ExperienceCard = ({ experience }) => {
           />
         </div>
       }
-      // intersectionObserverProps={{ triggerOnce: false }}
+      intersectionObserverProps={{ triggerOnce: false }}
     >
       <div>
         <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>

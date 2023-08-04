@@ -260,18 +260,18 @@ svg.hero-name text {
 }
 
 #blob {
-  animation: rotation 20s infinite;
+  animation: rotation 2s linear infinite;
 }
 
 @keyframes rotation {
   from {
-    /* transform: rotate(0deg); */
+    /* rotate: 0deg; */
   }
   50% {
     scale: 1 1.5;
   }
   to {
-    /* transform: rotate(360deg); */
+    /* rotate: 360deg; */
   }
 }
 

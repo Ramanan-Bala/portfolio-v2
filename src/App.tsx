@@ -23,10 +23,14 @@ import "./stars.css";
 export const App = () => {
   const [isLoading, setLoading] = useState(true);
 
+  const isClicked = () => {
+    setLoading(false);
+  };
+
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 6500);
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 6500);
     // Get the ID from the URL
     const url = new URL(window.location.href);
     const id = url.hash.substring(1); // Remove the "#" symbol from the ID
@@ -46,14 +50,14 @@ export const App = () => {
   return (
     <>
       {isLoading ? (
-        <InitialLoader />
+        <InitialLoader isClicked={isClicked} />
       ) : (
         <BrowserRouter>
           <motion.div
             className="relative z-0 bg-primary"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 4 }}
           >
             <div className="absolute pointer-events-none hidden sm:flex">
               <Cursor />
