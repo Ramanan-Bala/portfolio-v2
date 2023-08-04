@@ -22,7 +22,7 @@ import {
   carrent,
   jobit,
   tripguide,
-  threejs,
+  // threejs,
   pk,
   angular,
   vue,

@@ -11,7 +11,7 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
-import { ParticleContainer } from "./canvas";
+// import { ParticleContainer } from "./canvas";
 
 const ExperienceCard = ({ experience }) => {
   return (
