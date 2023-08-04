@@ -16,7 +16,7 @@ export const Navbar = () => {
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         if (window.pageYOffset >= sectionTop - 200)
-          current = section.getAttribute("id");
+          current = section.firstElementChild.id;
       });
       setActive(current);
     };
@@ -42,7 +42,7 @@ export const Navbar = () => {
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
-          {navLinks.map((link) => (
+          {navLinks.map((link, index) => (
             <li
               key={link.id}
               className={`${
@@ -50,7 +50,9 @@ export const Navbar = () => {
               } hover:text-white transition-all duration-300 cursor-pointer font-medium text-[18px]`}
               onClick={() => setActive(link.id)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              <a href={`#${link.id}`}>
+                {index + 1}.&nbsp;&nbsp;{link.title}
+              </a>
             </li>
           ))}
         </ul>

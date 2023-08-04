@@ -8,19 +8,11 @@ const Computer = ({ isMobile }) => {
   return (
     <mesh>
       <hemisphereLight intensity={1.75} groundColor="black" />
-      <pointLight intensity={1} />
-      {/* <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize-width={1024}
-      /> */}
+      <pointLight intensity={isMobile ? 0 : 1} />
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.6 : 1}
-        position={isMobile ? [1, -2, -0.2] : [0, -3, 0]}
+        position={isMobile ? [0, -2, -0.2] : [0, -3, 0]}
         rotation={isMobile ? [0, 0.4, 0] : [0, 2, 0]}
       />
     </mesh>
@@ -56,7 +48,7 @@ export const Computers = () => {
       <Suspense fallback={<Loader />}>
         <Computer isMobile={isMobile} />
         <OrbitControls
-          autoRotate={!isMobile}
+          // autoRotate={!isMobile}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2.2}
           minPolarAngle={Math.PI / 2.2}

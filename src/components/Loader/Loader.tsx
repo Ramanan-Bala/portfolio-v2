@@ -60,6 +60,7 @@ const Laptop = ({ open, hinge, ...props }) => {
         0.1
       );
     } else {
+      setHovered(false);
       group.current.position.z = THREE.MathUtils.lerp(
         group.current.position.z,
         25,
@@ -73,6 +74,7 @@ const Laptop = ({ open, hinge, ...props }) => {
       {...props}
       onPointerOver={(e) => (e.stopPropagation(), setHovered(true))}
       onPointerOut={(_) => setHovered(false)}
+      // dispose={() => dispose(scene)}
       dispose={null}
     >
       <three.group rotation-x={hinge} position={[0, -0.04, 0.41]}>

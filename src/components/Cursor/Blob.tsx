@@ -35,7 +35,7 @@ export const Blob = () => {
       transition={{
         type: "spring",
         stiffness: 500,
-        damping: 50,
+        damping: 20,
       }}
     ></motion.div>
   );
