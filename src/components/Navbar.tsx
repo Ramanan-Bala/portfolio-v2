@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
 
+import { motion } from "framer-motion";
+
 export const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
@@ -93,37 +95,59 @@ export const Navbar = () => {
               </span>
             </button>
           </div>
-          <div className="sm:hidden flex  justify-end items-center">
+          <div className="sm:hidden flex justify-end items-center">
             <img
-              src={toggle ? close : menu}
+              src={menu}
               alt="menu"
               className="w-[28px] h-[28px] object-contain cursor-pointer filter dark:invert-0 invert"
               onClick={() => setToggle(!toggle)}
             />
-            <div
-              className={`${
-                !toggle ? "hidden" : "flex"
-              } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            {/* {toggle && ( */}
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              animate={{
+                opacity: 1,
+                x: toggle ? 0 : 500,
+                backdropFilter: "blur(10px)",
+              }}
+              transition={{ duration: 0.3 }}
+              className="flex flex-col p-2 dark:bg-black bg-white absolute right-0 top-0 h-screen w-[calc(100vw-5vw)] z-10 rounded-l-xl"
             >
-              <ul className="list-none flex justify-end items-start flex-col gap-4">
-                {navLinks.map((link) => (
-                  <li
-                    key={link.id}
-                    className={`${
-                      active === link.id
-                        ? "dark:text-white text-slate-800"
-                        : "dark:text-secondary text-slate-500"
-                    } font-poppins font-medium cursor-pointer text-[16px]`}
-                    onClick={() => {
-                      setActive(link.id);
-                      setToggle(!toggle);
-                    }}
-                  >
-                    <a href={`#${link.id}`}>{link.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <div className="flex items-center">
+                <h1 className={`${styles.heroHeadText} text-center w-full`}>
+                  Menu.
+                </h1>
+                <img
+                  src={toggle ? close : menu}
+                  alt="menu"
+                  className="w-[28px] h-[28px] object-contain cursor-pointer filter dark:invert-0 invert"
+                  onClick={() => setToggle(!toggle)}
+                />
+              </div>
+              <div className="flex w-full h-full justify-center items-center">
+                <ul className="list-none flex flex-col gap-16">
+                  {navLinks.map((link, index) => (
+                    <li
+                      key={link.id}
+                      className={`${
+                        active === link.id
+                          ? "dark:text-white text-slate-800"
+                          : "dark:text-secondary text-slate-500"
+                      } font-poppins font-semibold cursor-pointer text-5xl`}
+                      onClick={() => {
+                        setActive(link.id);
+                        setToggle(!toggle);
+                      }}
+                    >
+                      <a href={`#${link.id}`}>
+                        {index + 1}. {link.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+            {/* )} */}
           </div>
         </div>
       </div>
