@@ -62,7 +62,7 @@ export const App = () => {
           >
             <div className="absolute pointer-events-none hidden sm:flex">
               <Cursor />
-              {/* <Blob /> */}
+              <Blob />
             </div>
             <Social />
             <div className="fixed top-0 w-full z-10">
