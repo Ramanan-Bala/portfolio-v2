@@ -26,7 +26,7 @@ const ContactSection = () => {
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 0.5)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        className="flex-[0.75] dark:bg-black-100 bg-slate-300/60 p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
@@ -36,42 +36,48 @@ const ContactSection = () => {
           className="mt-110 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-white font-medium m-4">Your Name</span>
+            <span className="dark:text-white-100 text-slate-800 font-medium m-4">
+              Your Name
+            </span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handelChange}
               placeholder="What's your name?"
-              className="bg-tertiary py-4 px-6 transition-all duration-300 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium focus:ring-[1px] focus:ring-white focus:ring-offset-2 focus:ring-offset-white-100"
+              className="dark:bg-tertiary bg-slate-100 py-4 px-6 transition-all duration-300 placeholder:text-secondary dark:text-white-100 text-slate-800 rounded-lg outline-none border-none font-medium focus:ring-[1px] focus:ring-white focus:ring-offset-2 focus:ring-offset-white-100"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium m-4">Your Email</span>
+            <span className="dark:text-white-100 text-slate-800 font-medium m-4">
+              Your Email
+            </span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handelChange}
               placeholder="What's your email?"
-              className="bg-tertiary py-4 px-6 transition-all duration-300 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium focus:ring-[1px] focus:ring-white focus:ring-offset-2 focus:ring-offset-white-100"
+              className="dark:bg-tertiary bg-slate-100 py-4 px-6 transition-all duration-300 placeholder:text-secondary dark:text-white-100 text-slate-800 rounded-lg outline-none border-none font-medium focus:ring-[1px] focus:ring-white focus:ring-offset-2 focus:ring-offset-white-100"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium m-4">Your Message</span>
+            <span className="dark:text-white-100 text-slate-800 font-medium m-4">
+              Your Message
+            </span>
             <textarea
               rows={7}
               name="message"
               value={form.message}
               onChange={handelChange}
               placeholder="What do you want to say?"
-              className="bg-tertiary py-4 px-6 transition-all duration-300 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium focus:ring-[1px] focus:ring-white focus:ring-offset-2 focus:ring-offset-white-100"
+              className="dark:bg-tertiary bg-slate-100 py-4 px-6 transition-all duration-300 placeholder:text-secondary dark:text-white-100 text-slate-800 rounded-lg outline-none border-none font-medium focus:ring-[1px] focus:ring-white focus:ring-offset-2 focus:ring-offset-white-100"
             />
           </label>
 
           <button
             type="submit"
-            className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+            className="dark:bg-tertiary bg-slate-100 py-3 px-8 outline-none w-fit dark:text-white-100 text-slate-500 font-bold shadow-md dark:shadow-primary shadow-slate-500 rounded-xl"
           >
             {loading ? "Sending..." : "Send"}
           </button>

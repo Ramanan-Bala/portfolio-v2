@@ -12,12 +12,21 @@
 }
 
 .line {
+  @apply dark:border-white border-slate-800;
   height: 75px;
-  border: 0.5px solid #ffffff;
+  border: 0.5px solid;
 }
 
 .social {
   left: 50px;
+}
+
+.social a:not(:first-child) svg path {
+  @apply dark:stroke-gray stroke-black;
+}
+
+.social a:first-child svg path {
+  @apply dark:fill-gray fill-black;
 }
 
 .social svg {
@@ -50,7 +59,7 @@
 }
 
 .mail span {
-  @apply text-gray text-xs;
+  @apply dark:text-gray text-slate-800 text-xs;
   font-family: "Poppins";
   letter-spacing: 0.05em;
   writing-mode: vertical-rl;

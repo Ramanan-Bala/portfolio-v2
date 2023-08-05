@@ -1,8 +1,9 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { loadFull } from "tsparticles";
 import { Particles } from "react-tsparticles";
 
 export const ParticleContainer = () => {
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
   const particlesInit = useCallback(async (engine: any) => {
     await loadFull(engine);
   }, []);
@@ -47,10 +48,10 @@ export const ParticleContainer = () => {
         },
         particles: {
           color: {
-            value: "#e68e2e",
+            value: theme === "dark" ? "#e68e2e" : "#7636ff",
           },
           links: {
-            color: "#f5d393",
+            color: theme === "dark" ? "#f5d393" : "#804dee",
             distance: 150,
             enable: true,
             opacity: 0.5,

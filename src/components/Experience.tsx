@@ -16,7 +16,6 @@ import { ParticleContainer } from "./canvas";
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
-      contentStyle={{ background: "#1d1836", color: "#fff" }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
@@ -32,7 +31,9 @@ const ExperienceCard = ({ experience }) => {
       intersectionObserverProps={{ triggerOnce: false }}
     >
       <div>
-        <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
+        <h3 className="dark:text-white text-slate-800 text-[24px] font-bold">
+          {experience.title}
+        </h3>
         <p className="text-secondary text-base !m-0 font-semibold">
           {experience.company_name}
         </p>
@@ -41,7 +42,7 @@ const ExperienceCard = ({ experience }) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className="text-white-100 text-sm pl-1 tracking-wider"
+            className="dark:text-white-100 text-slate-600 text-sm pl-1 tracking-wider"
           >
             {point}
           </li>

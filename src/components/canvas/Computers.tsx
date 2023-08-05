@@ -5,9 +5,14 @@ import { Loader } from "../Loader";
 
 const Computer = ({ isMobile }) => {
   const computer = useGLTF("./dog.glb");
+
+  useEffect(() => {
+    console.log(localStorage.getItem("theme"));
+  });
+
   return (
     <mesh>
-      <hemisphereLight intensity={1.75} groundColor="black" />
+      <hemisphereLight intensity={2.5} groundColor="black" />
       <pointLight intensity={isMobile ? 0 : 1} />
       <primitive
         object={computer.scene}

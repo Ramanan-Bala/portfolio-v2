@@ -40,6 +40,7 @@ export const Cursor = () => {
       {mousePos ? (
         <>
           <motion.div
+            className="dark:border-white border-primary border-2"
             animate={{
               position: "fixed",
               opacity: 1,
@@ -60,6 +61,7 @@ export const Cursor = () => {
           ></motion.div>
           <motion.div
             animate={cursorStyle}
+            className="dark:border-white border-primary border-2"
             variants={{
               auto: {
                 opacity: 1,
@@ -67,7 +69,6 @@ export const Cursor = () => {
                 width: 24,
                 scale: isClick ? 1.5 : 1,
                 position: "fixed",
-                border: "1.5px solid #f2f2f2",
                 borderRadius: "100%",
                 x: mousePos.x - 14,
                 y: mousePos.y - 14,

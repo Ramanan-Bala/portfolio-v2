@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
+/* font-family: 'Lora', serif; */
 
 @tailwind base;
 @tailwind components;
@@ -10,11 +12,10 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  color-scheme: dark;
 }
 
 body {
-  background-color: #050816;
+  @apply dark:bg-primary bg-slate-100 transition-all duration-300;
 }
 
 .hash-span {
@@ -24,17 +25,9 @@ body {
 }
 
 .black-gradient {
-  background: #000000; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000000;
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to right, #434343, #000000);
 }
 
 .violet-gradient {
@@ -219,18 +212,35 @@ body {
   }
 }
 
+html.dark svg.hero-name text {
+  animation: textAnimate 5s infinite alternate;
+}
+
 svg.hero-name text {
+  @apply stroke-[#804dee];
   color: #915eff;
   font-family: "Lora", serif;
   font-weight: 700;
-  stroke: #804dee;
-  /* stroke: #08fdd8; */
   stroke-linecap: round;
   stroke-miterlimit: 10;
   stroke-width: 1px;
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
-  animation: textAnimate 5s infinite alternate;
+  animation: textAnimateLight 5s infinite alternate;
+}
+
+@keyframes textAnimateLight {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+    fill: #804deeae;
+  }
+
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffset: -20%;
+    fill: #804dee00;
+  }
 }
 
 @keyframes textAnimate {
@@ -257,6 +267,13 @@ svg.hero-name text {
 
 .vertical-timeline-element-content {
   box-shadow: 0 3px 0 #804dee !important;
+}
+
+.vertical-timeline-element-content.bounce-in {
+  @apply dark:bg-[#1d1836] bg-white;
+}
+.vertical-timeline-element-date {
+  @apply dark:text-white text-[#1d1836];
 }
 
 #blob {
@@ -286,6 +303,85 @@ svg.hero-name text {
   height: 100%;
   position: sticky;
   top: 0;
-  background-color: #050816;
   overflow: scroll;
+}
+
+/* toggle */
+.theme-toggle--button {
+  --button-diameter: 30px;
+  --shape-size: 14px;
+  --color: #353175;
+  border: none;
+  outline: none;
+  display: flex;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  align-items: center;
+  background-color: #fff;
+  justify-content: center;
+  transition: box-shadow 500ms;
+  font-size: var(--shape-size);
+  width: var(--button-diameter);
+  height: var(--button-diameter);
+  box-shadow: 4px 4px 15px rgba(53, 49, 117, 0.2);
+}
+html.dark ~ .theme-toggle--button {
+  box-shadow: 4px 4px 15px rgb(29 27 58);
+}
+.theme-toggle--button span {
+  display: inline-block;
+}
+.theme-toggle--button .rays--container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+.theme-toggle--button .rays--container .ray {
+  position: absolute;
+  border-radius: 50%;
+  transition: all 500ms;
+}
+.theme-toggle--button .rays--container .ray:nth-child(2) {
+  transform: rotate(45deg);
+}
+.theme-toggle--button .rays--container .ray:nth-child(3) {
+  transform: rotate(90deg);
+}
+.theme-toggle--button .rays--container .ray:nth-child(4) {
+  transform: rotate(-45deg);
+}
+.theme-toggle--button .shape {
+  z-index: 1;
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #fff;
+  transition: all 500ms;
+}
+.theme-toggle--button .shape.moon {
+  width: 1.667em;
+  height: 1.667em;
+  box-shadow: inset -0.5em -0.5em var(--color);
+}
+.theme-toggle--button .shape.moon ~ .rays--container .ray {
+  width: 0;
+  height: 0;
+}
+.theme-toggle--button .shape.sun {
+  width: 1em;
+  height: 1em;
+  box-shadow: inset -0.7em -0.7em var(--color);
+}
+.theme-toggle--button .shape.sun ~ .rays--container {
+  transform: rotate(90deg);
+  transition: transform 750ms 400ms;
+}
+.theme-toggle--button .shape.sun ~ .rays--container .ray {
+  width: 0.334em;
+  height: 1.667em;
+  background-color: var(--color);
 }

@@ -14,7 +14,7 @@ export const Hero = () => {
         </div>
         <div>
           <h1
-            className={`${styles.heroHeadText} text-white flex items-center flex-wrap`}
+            className={`${styles.heroHeadText} flex items-center flex-wrap`}
             style={{ fontFamily: "Lora" }}
           >
             Hi, I'm &nbsp;
@@ -30,7 +30,7 @@ export const Hero = () => {
               </text>
             </motion.svg>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          <p className={`${styles.heroSubText} mt-2`}>
             Hello! My name is Ramanan and I enjoy creating things that live on
             the internet. My interest in web development started back in 2019
             when I decided to see what my dad is doing — turns out hacking
@@ -41,9 +41,9 @@ export const Hero = () => {
       <Computers />
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
-          <div className="w-9 h-16 rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
+          <div className="w-9 h-16 rounded-3xl border-4 dark:border-secondary border-slate-800 flex justify-center items-start p-2">
             <motion.div
-              className="w-3 h-3 rounded-full bg-secondary mb-1"
+              className="w-3 h-3 rounded-full dark:bg-secondary bg-slate-800 mb-1"
               animate={{
                 y: [0, 24, 0],
               }}

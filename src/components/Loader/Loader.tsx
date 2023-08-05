@@ -27,9 +27,6 @@ const Laptop = ({ open, hinge, ...props }) => {
     [hovered]
   );
 
-  useEffect(() => {
-    console.log(typeof open === "boolean");
-  }, [open]);
   // Make it float in the air when it's opened
   useFrame((state) => {
     if (typeof open == "boolean") {

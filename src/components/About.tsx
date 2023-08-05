@@ -16,10 +16,10 @@ const ServiceCard = ({ index, title, icon }) => {
     >
       <div
         // options={{ max: 45, scale: 1, speed: 450 }}
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col shadow-2xl shadow-purple-500/30"
+        className="dark:bg-tertiary bg-slate-100 rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col shadow-2xl shadow-purple-500/30"
       >
         <img src={icon} alt={title} className="w-16 h-16 object-contain" />
-        <h3 className="text-white text-[20px] font-bold text-center">
+        <h3 className="dark:text-white text-slate-800 text-[20px] font-bold text-center">
           {title}
         </h3>
       </div>
@@ -52,7 +52,7 @@ const AboutSection = () => {
       </motion.div>
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-7 h-[100px]"
+        className="mt-4 dark:text-secondary text-slate-600 text-[17px] max-w-3xl leading-7 h-[100px]"
       >
         {description[content]}
       </motion.p>
