@@ -6,10 +6,6 @@ import { Loader } from "../Loader";
 const Computer = ({ isMobile }) => {
   const computer = useGLTF("./dog.glb");
 
-  useEffect(() => {
-    console.log(localStorage.getItem("theme"));
-  });
-
   return (
     <mesh>
       <hemisphereLight intensity={2.5} groundColor="black" />

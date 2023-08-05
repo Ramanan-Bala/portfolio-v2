@@ -1,9 +1,9 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { loadFull } from "tsparticles";
 import { Particles } from "react-tsparticles";
 
 export const ParticleContainer = () => {
-  const [theme] = localStorage.getItem("theme");
+  const [theme] = useState(localStorage.getItem("theme"));
   const particlesInit = useCallback(async (engine: any) => {
     await loadFull(engine);
   }, []);
