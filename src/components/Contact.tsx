@@ -29,7 +29,9 @@ const ContactSection = () => {
         className="flex-[0.75] dark:bg-black-100 bg-slate-300/60 p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <h3 className={styles.sectionHeadText}>
+          Contact<span className="dot">.</span>
+        </h3>
         <form
           ref={formRef}
           onSubmit={handelSubmit}

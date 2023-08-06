@@ -33,9 +33,8 @@ export const Blob = () => {
         filter: "blur(200px)",
       }}
       transition={{
-        type: "spring",
-        stiffness: 500,
-        damping: 20,
+        type: "tween",
+        duration: 0.2,
       }}
     ></motion.div>
   );

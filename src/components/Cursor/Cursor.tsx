@@ -54,9 +54,8 @@ export const Cursor = () => {
               zIndex: 9999,
             }}
             transition={{
-              type: "spring",
-              stiffness: 500,
-              damping: 50,
+              type: "tween",
+              duration: 0.2,
             }}
           ></motion.div>
           <motion.div
@@ -88,9 +87,8 @@ export const Cursor = () => {
               },
             }}
             transition={{
-              type: "spring",
-              stiffness: 500,
-              damping: 50,
+              type: "tween",
+              duration: 0.2,
             }}
           ></motion.div>
         </>

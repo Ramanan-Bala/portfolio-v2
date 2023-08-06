@@ -12,7 +12,7 @@ import {
   // Tech,
   // Works,
   // Stars,
-  Blob,
+  // Blob,
 } from "./components";
 import { useEffect, useState } from "react";
 
@@ -58,11 +58,11 @@ export const App = () => {
             className="relative z-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 4 }}
+            transition={{ duration: 2 }}
           >
             <div className="absolute pointer-events-none hidden sm:flex">
               <Cursor />
-              <Blob />
+              {/* <Blob /> */}
             </div>
             <Social />
             <div className="fixed top-0 w-full z-10">

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { Computers } from ".";
+import { Reveal } from "../utils/reveal";
 
 export const Hero = () => {
   return (
@@ -13,12 +14,13 @@ export const Hero = () => {
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
         <div>
-          <h1
-            className={`${styles.heroHeadText} flex items-center flex-wrap`}
-            style={{ fontFamily: "Lora" }}
-          >
-            Hi, I'm &nbsp;
-            <span
+          <Reveal>
+            <h1
+              className={`${styles.heroHeadText}`}
+              style={{ fontFamily: "Lora" }}
+            >
+              Hey, I'm Ramanan<span className="dot">.</span>
+              {/* <span
               className="text-[#915eff] block lg:hidden"
               style={{ fontFamily: "Lora" }}
             >
@@ -28,19 +30,23 @@ export const Hero = () => {
               <text x="0%" y="75%" textAnchor="start">
                 Ramanan Balamurugan
               </text>
-            </motion.svg>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2`}>
-            Hello! My name is Ramanan and I enjoy creating things that live on
-            the internet. My interest in web development started back in 2019
-            when I decided to see what my dad is doing — turns out hacking
-            together a custom html components taught me a lot about HTML & CSS!
-          </p>
+            </motion.svg> */}
+            </h1>
+          </Reveal>
+          <Reveal>
+            <p className={`${styles.heroSubText} mt-2`}>
+              Hello! My name is Ramanan and I enjoy creating things that live on
+              the internet. My interest in web development started back in 2019
+              when I decided to see what my dad is doing — turns out hacking
+              together a custom html components taught me a lot about HTML &
+              CSS!
+            </p>
+          </Reveal>
         </div>
       </div>
       <Computers />
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-        <a href="#about">
+        <a href="#about" className="text-secondary flex items-center gap-5">
           <div className="w-9 h-16 rounded-3xl border-4 dark:border-secondary border-slate-800 flex justify-center items-start p-2">
             <motion.div
               className="w-3 h-3 rounded-full dark:bg-secondary bg-slate-800 mb-1"
@@ -54,6 +60,21 @@ export const Hero = () => {
               }}
             />
           </div>
+          Scroll down
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <polyline points="19 12 12 19 5 12" />
+          </svg>
         </a>
       </div>
     </div>

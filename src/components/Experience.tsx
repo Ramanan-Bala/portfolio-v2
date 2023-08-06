@@ -3,15 +3,13 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 
-import { motion } from "framer-motion";
-
 import "react-vertical-timeline-component/style.min.css";
 
 import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils/motion";
 import { ParticleContainer } from "./canvas";
+import { Reveal } from "../utils/reveal";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -56,10 +54,16 @@ const ExperienceSection = () => {
   return (
     <>
       <ParticleContainer />
-      <motion.div variants={textVariant(0)}>
-        <p className={styles.sectionSubText}>What I have done so far</p>
-        <h2 className={styles.sectionHeadText}>Work Experience.</h2>
-      </motion.div>
+      <div>
+        <Reveal>
+          <p className={styles.sectionSubText}>What I have done so far</p>
+        </Reveal>
+        <Reveal>
+          <h2 className={styles.sectionHeadText}>
+            Work Experience<span className="dot">.</span>
+          </h2>
+        </Reveal>
+      </div>
       <div className="mt-20 flex flex-col">
         <VerticalTimeline lineColor="linear-gradient(-180deg,#804dee 0%,rgb(236, 64, 122) 60%,rgb(253, 216, 53) 70%,rgb(253, 216, 53, 0) 100%)">
           {experiences.map((experience, index) => (

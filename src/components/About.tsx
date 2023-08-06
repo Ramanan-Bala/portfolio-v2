@@ -1,30 +1,31 @@
-// import { Tilt } from "react-tilt";
+import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { services } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn } from "../utils/motion";
 import { useCallback, useEffect, useState } from "react";
 import { SectionWrapper } from "../hoc";
+import { Reveal } from "../utils/reveal";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
-    // <Tilt>
-    <motion.div
-      variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-      whileHover={{ scale: 1.05 }}
-      className="green-pink-gradient p-[1px] rounded-[20px] shadow-card cursor-pointer"
-    >
-      <div
-        // options={{ max: 45, scale: 1, speed: 450 }}
-        className="dark:bg-tertiary bg-slate-100 rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col shadow-2xl shadow-purple-500/30"
+    <Tilt>
+      <motion.div
+        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+        transition={{ duration: 0.5 }}
+        className="green-pink-gradient p-[1px] rounded-[20px] shadow-card cursor-pointer"
       >
-        <img src={icon} alt={title} className="w-16 h-16 object-contain" />
-        <h3 className="dark:text-white text-slate-800 text-[20px] font-bold text-center">
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-    // </Tilt>
+        <div
+          // options={{ max: 45, scale: 1, speed: 450 }}
+          className="dark:bg-tertiary bg-slate-100 rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col shadow-2xl shadow-purple-500/30"
+        >
+          <img src={icon} alt={title} className="w-16 h-16 object-contain" />
+          <h3 className="dark:text-white text-slate-800 text-[20px] font-bold text-center">
+            {title}
+          </h3>
+        </div>
+      </motion.div>
+    </Tilt>
   );
 };
 
@@ -45,23 +46,28 @@ const AboutSection = () => {
     return () => clearInterval(intervalID);
   });
   return (
-    <>
-      <motion.div variants={textVariant(0)}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 dark:text-secondary text-slate-600 text-[17px] max-w-3xl leading-7 h-[100px]"
-      >
-        {description[content]}
-      </motion.p>
-      <div className="mt-20 flex flex-wrap gap-10 service-card max-w-fit">
+    <div className="h-screen">
+      <div>
+        <Reveal>
+          <p className={styles.sectionSubText}>Introduction</p>
+        </Reveal>
+        <Reveal>
+          <h2 className={styles.sectionHeadText}>
+            Overview<span className="dot">.</span>
+          </h2>
+        </Reveal>
+      </div>
+      <Reveal>
+        <p className="mt-4 dark:text-secondary text-slate-600 text-[17px] max-w-3xl leading-7 h-[120px]">
+          {description[content]}
+        </p>
+      </Reveal>
+      <div className="mt-20 flex flex-wrap gap-10 max-w-fit">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
