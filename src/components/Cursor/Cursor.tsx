@@ -39,28 +39,29 @@ export const Cursor = () => {
       <div id="cursor"></div> */}
       {mousePos ? (
         <>
-          <motion.div
-            className="dark:border-white border-primary border-2"
+          {/* <motion.div
+            className="dark:border-white border-[#915eff] border-2"
             animate={{
               position: "fixed",
               opacity: 1,
-              height: 4,
-              width: 4,
+              height: 25,
+              width: 25,
               fontSize: "16px",
               borderRadius: "100%",
-              backgroundColor: "#f2f2f2",
-              x: mousePos.x - 4,
-              y: mousePos.y - 4,
+              backgroundColor: "#915eff",
+              scale: isClick ? 1.5 : 1,
+              x: mousePos.x - 14,
+              y: mousePos.y - 14,
               zIndex: 9999,
             }}
             transition={{
               type: "tween",
-              duration: 0.2,
+              duration: 0.05,
             }}
-          ></motion.div>
+          ></motion.div> */}
           <motion.div
             animate={cursorStyle}
-            className="dark:border-white border-primary border-2"
+            className="border-[#915eff] bg-[#915eff] border-2"
             variants={{
               auto: {
                 opacity: 1,
@@ -74,21 +75,20 @@ export const Cursor = () => {
                 zIndex: 9999,
               },
               pointer: {
-                opacity: 0.2,
-                height: 48,
-                width: 48,
+                opacity: 0.3,
+                height: 72,
+                width: 72,
                 scale: isClick ? 0.5 : 1,
                 position: "fixed",
-                backgroundColor: "#f2f2f2",
                 borderRadius: "100%",
-                x: mousePos.x - 26,
-                y: mousePos.y - 26,
+                x: mousePos.x - 39,
+                y: mousePos.y - 39,
                 zIndex: 9999,
               },
             }}
             transition={{
               type: "tween",
-              duration: 0.2,
+              duration: 0.05,
             }}
           ></motion.div>
         </>

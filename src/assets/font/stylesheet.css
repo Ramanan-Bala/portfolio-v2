@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: local("GT Walsheim Pro Light"), local("GTWalsheimPro-Light"),
+    url("GTWalsheimPro-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: local("GT Walsheim Pro Regular"), local("GTWalsheimPro-Regular"),
+    url("GTWalsheimPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: local("GT Walsheim Pro Thin"), local("GTWalsheimPro-Thin"),
+    url("GTWalsheimPro-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: local("GT Walsheim Pro Bold"), local("GTWalsheimPro-Bold"),
+    url("GTWalsheimPro-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: local("GT Walsheim Pro Medium"), local("GTWalsheimPro-Medium"),
+    url("GTWalsheimPro-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: local("GT Walsheim Pro Black"), local("GTWalsheimPro-Black"),
+    url("GTWalsheimPro-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}

@@ -7,8 +7,8 @@ export const Social = () => {
     <div>
       <motion.div
         animate={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.15, delay: 1.7 }}
+        initial={{ opacity: 0, y: 100 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
         className="float social"
       >
         <a
@@ -110,8 +110,8 @@ export const Social = () => {
       </motion.div>
       <motion.div
         animate={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.15, delay: 1.7 }}
+        initial={{ opacity: 0, y: 100 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
         className="float mail"
       >
         <a href="mailto:ramanan.bala2003@gmail.com">

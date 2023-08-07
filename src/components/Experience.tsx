@@ -8,8 +8,8 @@ import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { ParticleContainer } from "./canvas";
-import { Reveal } from "../utils/reveal";
+// import { ParticleContainer } from "./canvas";
+import { Reveal } from "../hoc/reveal";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -53,7 +53,7 @@ const ExperienceCard = ({ experience }) => {
 const ExperienceSection = () => {
   return (
     <>
-      <ParticleContainer />
+      {/* <ParticleContainer /> */}
       <div>
         <Reveal>
           <p className={styles.sectionSubText}>What I have done so far</p>

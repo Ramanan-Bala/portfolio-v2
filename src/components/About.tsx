@@ -5,7 +5,7 @@ import { services } from "../constants";
 import { fadeIn } from "../utils/motion";
 import { useCallback, useEffect, useState } from "react";
 import { SectionWrapper } from "../hoc";
-import { Reveal } from "../utils/reveal";
+import { Reveal } from "../hoc/reveal";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -46,7 +46,7 @@ const AboutSection = () => {
     return () => clearInterval(intervalID);
   });
   return (
-    <div className="h-screen">
+    <div className="min-h-screen">
       <div>
         <Reveal>
           <p className={styles.sectionSubText}>Introduction</p>

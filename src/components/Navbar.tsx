@@ -133,7 +133,7 @@ export const Navbar = () => {
                         active === link.id
                           ? "dark:text-white text-slate-800"
                           : "dark:text-secondary text-slate-500"
-                      } font-poppins font-semibold cursor-pointer text-5xl`}
+                      } font-semibold cursor-pointer text-5xl`}
                       onClick={() => {
                         setActive(link.id);
                         setToggle(!toggle);

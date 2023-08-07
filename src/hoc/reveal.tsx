@@ -6,7 +6,7 @@ interface Props {
 }
 export const Reveal = ({ children, width = "fit-content" }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
   const divControls = useAnimation();
   const slideControls = useAnimation();
 
@@ -14,6 +14,9 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
     if (isInView) {
       divControls.start("visible");
       slideControls.start("visible");
+    } else {
+      divControls.set("hidden");
+      slideControls.set("hidden");
     }
   }, [isInView]);
 

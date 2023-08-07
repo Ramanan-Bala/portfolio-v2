@@ -46,11 +46,11 @@
 }
 
 .social svg:hover:not(.npm) > path {
-  @apply stroke-green;
+  @apply !stroke-[#915eff];
 }
 
 .social .npm:hover > path {
-  @apply fill-green;
+  @apply !fill-[#915eff];
 }
 
 .mail {
@@ -60,12 +60,11 @@
 
 .mail span {
   @apply dark:text-gray text-slate-800 text-xs;
-  font-family: "Poppins";
   letter-spacing: 0.05em;
   writing-mode: vertical-rl;
   text-align: center;
 }
 
 .mail span:hover {
-  @apply text-green;
+  @apply text-[#915eff];
 }

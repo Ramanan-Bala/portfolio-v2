@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { Computers } from ".";
-import { Reveal } from "../utils/reveal";
+// import { Computers } from ".";
+import { Reveal } from "../hoc/reveal";
 
 export const Hero = () => {
   return (
@@ -15,14 +15,11 @@ export const Hero = () => {
         </div>
         <div>
           <Reveal>
-            <h1
-              className={`${styles.heroHeadText}`}
-              style={{ fontFamily: "Lora" }}
-            >
-              Hey, I'm Ramanan<span className="dot">.</span>
+            <h1 className={`${styles.heroHeadText}`}>
+              <span className="font-medium">Hey, I'm</span> Ramanan
+              <span className="dot">.</span>
               {/* <span
               className="text-[#915eff] block lg:hidden"
-              style={{ fontFamily: "Lora" }}
             >
               Ramanan
             </span>
@@ -44,9 +41,12 @@ export const Hero = () => {
           </Reveal>
         </div>
       </div>
-      <Computers />
+      {/* <Computers /> */}
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-        <a href="#about" className="text-secondary flex items-center gap-5">
+        <a
+          href="#about"
+          className="dark:text-secondary text-tertiary flex items-center gap-5 font-semibold"
+        >
           <div className="w-9 h-16 rounded-3xl border-4 dark:border-secondary border-slate-800 flex justify-center items-start p-2">
             <motion.div
               className="w-3 h-3 rounded-full dark:bg-secondary bg-slate-800 mb-1"
@@ -60,21 +60,23 @@ export const Hero = () => {
               }}
             />
           </div>
-          Scroll down
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="12" y1="5" x2="12" y2="19" />
-            <polyline points="19 12 12 19 5 12" />
-          </svg>
+          <span className="flex items-center gap-1">
+            Scroll down
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <polyline points="19 12 12 19 5 12" />
+            </svg>
+          </span>
         </a>
       </div>
     </div>
