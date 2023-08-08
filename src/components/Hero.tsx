@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 // import { Computers } from ".";
-import { Reveal } from "../hoc/reveal";
+import { Reveal } from "../hoc";
 
 export const Hero = () => {
   return (

@@ -23,6 +23,7 @@
     "react-tilt": "^1.0.2",
     "react-tsparticles": "^2.11.0",
     "react-vertical-timeline-component": "^3.6.0",
+    "resize-observer-polyfill": "^1.5.1",
     "three": "^0.155.0",
     "tsparticles": "^2.12.0"
   },

@@ -21,6 +21,15 @@ body {
   @apply dark:bg-primary bg-slate-100 transition-all duration-300;
 }
 
+.scroll-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  will-change: transform;
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
