@@ -3,6 +3,7 @@ import { styles } from "../styles";
 import { useEffect, useState } from "react";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
+import { MagneticEffect } from "../hoc";
 
 import { motion } from "framer-motion";
 
@@ -54,7 +55,9 @@ export const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-14 h-14" />
+          <MagneticEffect>
+            <img src={logo} alt="logo" className="w-14 h-14" />
+          </MagneticEffect>
           <p className="dark:text-white text-slate-800 text-[18px] flex font-bold cursor-pointer">
             Ramanan &nbsp;
             <span className="md:block hidden">| Full-Stack Developer</span>
@@ -64,36 +67,39 @@ export const Navbar = () => {
           <div className="flex items-center gap-10">
             <ul className="list-none hidden sm:flex flex-row gap-10">
               {navLinks.map((link, index) => (
-                <li
+                <a
+                  href={`#${link.id}`}
                   key={link.id}
                   className={`${
                     active === link.id
                       ? "dark:text-white text-slate-800"
                       : "dark:text-secondary text-slate-500"
                   } dark:hover:text-white hover:text-slate-800 transition-all duration-300 cursor-pointer font-medium text-[18px]`}
-                  onClick={() => setActive(link.id)}
+                  onClick={() => {
+                    setActive(link.id);
+                  }}
                 >
-                  <a href={`#${link.id}`}>
-                    {index + 1}.&nbsp;&nbsp;{link.title}
-                  </a>
-                </li>
+                  {index + 1}.&nbsp;&nbsp;{link.title}
+                </a>
               ))}
             </ul>
-            <button
-              className="theme-toggle--button"
-              aria-label="Toggle Theme"
-              onClick={changeTheme}
-            >
-              <span
-                className={`shape ${theme === "dark" ? "sun" : "moon"}`}
-              ></span>
-              <span className="rays--container">
-                <span className="ray"></span>
-                <span className="ray"></span>
-                <span className="ray"></span>
-                <span className="ray"></span>
-              </span>
-            </button>
+            <MagneticEffect>
+              <button
+                className="theme-toggle--button"
+                aria-label="Toggle Theme"
+                onClick={changeTheme}
+              >
+                <span
+                  className={`shape ${theme === "dark" ? "sun" : "moon"}`}
+                ></span>
+                <span className="rays--container">
+                  <span className="ray"></span>
+                  <span className="ray"></span>
+                  <span className="ray"></span>
+                  <span className="ray"></span>
+                </span>
+              </button>
+            </MagneticEffect>
           </div>
           <div className="sm:hidden flex justify-end items-center">
             <img

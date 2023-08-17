@@ -88,7 +88,7 @@ export const Cursor = () => {
             }}
             transition={{
               type: "tween",
-              duration: 0.05,
+              ease: "backOut",
             }}
           ></motion.div>
         </>

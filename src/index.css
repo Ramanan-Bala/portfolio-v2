@@ -233,3 +233,28 @@ html.dark ~ .theme-toggle--button {
   height: 1.667em;
   background-color: var(--color);
 }
+
+.mask {
+  left: 0;
+  position: absolute;
+  top: -8px;
+  z-index: 5;
+  background: #915eff;
+  -webkit-mask-image: url("./mask.svg");
+  mask-image: url("./mask.svg");
+  -webkit-mask-origin: content-box;
+  mask-origin: content-box;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-size: 40px;
+  min-height: 4123.38px;
+  /* pointer-events: none; */
+}
+
+html.dark .text-dark {
+  color: black !important;
+}
+
+.text-dark {
+  color: #f3f3f3;
+}

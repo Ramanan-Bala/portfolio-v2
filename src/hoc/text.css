@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  color: rgb(211, 211, 211);
+}
+
+.body {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.body span {
+  opacity: 0.2;
+}

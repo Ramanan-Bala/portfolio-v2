@@ -3,7 +3,7 @@
   justify-items: center;
   align-items: center;
   flex-direction: column;
-  gap: 25px;
+  gap: 30px;
   padding-bottom: 0;
 
   position: fixed;
@@ -21,11 +21,11 @@
   left: 50px;
 }
 
-.social a:not(:first-child) svg path {
+.social div:not(:first-child) a svg path {
   @apply dark:stroke-gray stroke-black;
 }
 
-.social a:first-child svg path {
+.social div:first-child a svg path {
   @apply dark:fill-gray fill-black;
 }
 
@@ -44,14 +44,14 @@
 .social svg:hover {
   transform: scale(1.5);
 }
-
+/* 
 .social svg:hover:not(.npm) > path {
   @apply !stroke-[#915eff];
 }
 
 .social .npm:hover > path {
   @apply !fill-[#915eff];
-}
+} */
 
 .mail {
   right: 50px;
@@ -65,6 +65,6 @@
   text-align: center;
 }
 
-.mail span:hover {
+/* .mail span:hover {
   @apply text-[#915eff];
-}
+} */
