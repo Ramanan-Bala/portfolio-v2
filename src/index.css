@@ -240,8 +240,8 @@ html.dark ~ .theme-toggle--button {
   top: -8px;
   z-index: 5;
   background: #915eff;
-  -webkit-mask-image: url("./mask.svg");
-  mask-image: url("./mask.svg");
+  -webkit-mask-image: url("./assets/mask.svg");
+  mask-image: url("./assets/mask.svg");
   -webkit-mask-origin: content-box;
   mask-origin: content-box;
   -webkit-mask-repeat: no-repeat;
