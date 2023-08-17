@@ -1,10 +1,4 @@
-import {
-  useRef,
-  useState,
-  useCallback,
-  useLayoutEffect,
-  useEffect,
-} from "react";
+import { useRef, useState, useCallback, useLayoutEffect } from "react";
 import ResizeObserver from "resize-observer-polyfill";
 import { useScroll, useTransform, useSpring, motion } from "framer-motion";
 

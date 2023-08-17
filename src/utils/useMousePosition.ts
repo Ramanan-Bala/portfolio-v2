@@ -1,14 +1,8 @@
-import { useScroll, useSpring, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export const useMousePosition = () => {
   const [orgMouseY, setMouseY] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  const { scrollY } = useScroll();
-  const transform = useTransform(scrollY, [0, 4123], [0, 4123]);
-  const physics = { damping: 15, mass: 0.27, stiffness: 55 };
-  const spring = useSpring(transform, physics);
 
   const updateMousePosition = (event) => {
     const { clientX, clientY } = event;

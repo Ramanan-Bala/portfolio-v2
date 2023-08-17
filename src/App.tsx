@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import {
   About,
-  Cursor,
+  // Cursor,
   Contact,
   Experience,
   Hero,
@@ -67,34 +67,34 @@ export const App = () => {
       {/* <div className="absolute pointer-events-none hidden sm:flex">
         <Cursor />
       </div> */}
-      {/* {isLoading ? (
+      {isLoading ? (
         <InitialLoader isClicked={isClicked} />
-      ) : ( */}
-      <BrowserRouter>
-        <div className="fixed top-0 w-full z-10">
-          <Navbar />
-        </div>
-        <Social />
-        <SmoothScroll>
-          {/* <div className="card z-[-1] "> */}
-          <Hero />
-          {/* </div> */}
-          <div className="dark:bg-primary bg-slate-100 transition-all duration-300 overflow-hidden">
-            <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat py-12">
-              <About />
-            </div>
-            <Experience />
-            <div className=" overflow-hidden">
-              <div id="stars"></div>
-              <div id="stars2"></div>
-              <div id="stars3"></div>
-              <Contact />
-            </div>
+      ) : (
+        <BrowserRouter>
+          <div className="fixed top-0 w-full z-10">
+            <Navbar />
           </div>
-          <Mask />
-        </SmoothScroll>
-      </BrowserRouter>
-      {/* )} */}
+          <Social />
+          <SmoothScroll>
+            {/* <div className="card z-[-1] "> */}
+            <Hero />
+            {/* </div> */}
+            <div className="dark:bg-primary bg-slate-100 transition-all duration-300 overflow-hidden">
+              <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat py-12">
+                <About />
+              </div>
+              <Experience />
+              <div className=" overflow-hidden">
+                <div id="stars"></div>
+                <div id="stars2"></div>
+                <div id="stars3"></div>
+                <Contact />
+              </div>
+            </div>
+            <Mask />
+          </SmoothScroll>
+        </BrowserRouter>
+      )}
     </>
   );
 };
