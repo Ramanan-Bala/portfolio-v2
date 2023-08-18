@@ -23,7 +23,7 @@ const Laptop = ({ open, hinge, ...props }) => {
   const [hovered, setHovered] = useState(false);
   useEffect(
     () => void (document.body.style.cursor = hovered ? "pointer" : "auto"),
-    [hovered]
+    [hovered],
   );
 
   // Make it float in the air when it's opened
@@ -33,34 +33,34 @@ const Laptop = ({ open, hinge, ...props }) => {
       group.current.rotation.x = THREE.MathUtils.lerp(
         group.current.rotation.x,
         open ? Math.cos(t / 10) / 10 + 0.25 : 0,
-        0.1
+        0.1,
       );
       group.current.rotation.y = THREE.MathUtils.lerp(
         group.current.rotation.y,
         open ? Math.sin(t / 10) / 4 : 0,
-        0.1
+        0.1,
       );
       group.current.rotation.z = THREE.MathUtils.lerp(
         group.current.rotation.z,
         open ? Math.sin(t / 10) / 10 : 0,
-        0.1
+        0.1,
       );
       group.current.position.y = THREE.MathUtils.lerp(
         group.current.position.y,
         open ? (-2 + Math.sin(t)) / 3 : -4.3,
-        0.1
+        0.1,
       );
       group.current.position.z = THREE.MathUtils.lerp(
         group.current.position.z,
         open ? 2 : 0,
-        0.1
+        0.1,
       );
     } else {
       setHovered(false);
       group.current.position.z = THREE.MathUtils.lerp(
         group.current.position.z,
         25,
-        0.1
+        0.1,
       );
     }
   });

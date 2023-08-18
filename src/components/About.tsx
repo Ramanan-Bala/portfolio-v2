@@ -12,14 +12,14 @@ const ServiceCard = ({ index, title, icon }) => {
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
         transition={{ duration: 0.5 }}
-        className="green-pink-gradient p-[1px] rounded-[20px] shadow-card cursor-pointer"
+        className="green-pink-gradient cursor-pointer rounded-[20px] p-[1px] shadow-card"
       >
         <div
           // options={{ max: 45, scale: 1, speed: 450 }}
-          className="dark:bg-tertiary bg-slate-100 rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col shadow-2xl shadow-purple-500/30"
+          className="flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] bg-slate-100 px-12 py-5 shadow-2xl shadow-purple-500/30 dark:bg-tertiary"
         >
-          <img src={icon} alt={title} className="w-16 h-16 object-contain" />
-          <h3 className="dark:text-white text-slate-800 text-[20px] font-bold text-center">
+          <img src={icon} alt={title} className="h-16 w-16 object-contain" />
+          <h3 className="text-center text-[20px] font-bold text-slate-800 dark:text-white">
             {title}
           </h3>
         </div>
@@ -30,7 +30,7 @@ const ServiceCard = ({ index, title, icon }) => {
 
 const AboutSection = () => {
   return (
-    <div>
+    <>
       <div>
         <Reveal>
           <p className={styles.sectionSubText}>Introduction</p>
@@ -42,18 +42,18 @@ const AboutSection = () => {
         </Reveal>
       </div>
       <Reveal>
-        <p className="mt-4 dark:text-secondary text-slate-600 text-[17px] max-w-3xl leading-7 h-[120px]">
+        <p className="mt-4 max-w-3xl text-[17px] leading-7 text-slate-600 dark:text-secondary">
           I create successful restful api that are fast, easy to use, and built
           with best practices. I have experience in creating api using libraries
           like Spring-Boot, Node ExpressJS, Sequelize, Mongoose and Django.
         </p>
       </Reveal>
-      <div className="mt-20 flex flex-wrap gap-10 max-w-fit">
+      <div className="mt-20 flex max-w-fit flex-wrap gap-10">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

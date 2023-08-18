@@ -18,7 +18,7 @@
 }
 
 body {
-  @apply dark:bg-primary bg-slate-100 transition-all duration-300;
+  @apply bg-slate-100 transition-all duration-300 dark:bg-primary;
 }
 
 .scroll-container {
@@ -118,10 +118,10 @@ svg.hero-name text {
 }
 
 .vertical-timeline-element-content.bounce-in {
-  @apply dark:bg-[#1d1836] bg-white;
+  @apply bg-white dark:bg-[#1d1836];
 }
 .vertical-timeline-element-date {
-  @apply dark:text-white text-[#1d1836];
+  @apply text-[#1d1836] dark:text-white;
 }
 
 #blob {

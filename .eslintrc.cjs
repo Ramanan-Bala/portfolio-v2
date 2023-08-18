@@ -11,6 +11,7 @@ module.exports = {
     "eslint:recommended",
     // "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:react-hooks/recommended",
+    "plugins:prettier-plugin-tailwindcss",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   plugins: ["react-refresh"],

@@ -3,7 +3,7 @@ import "./Loader.css";
 
 export const InitialLoader = ({ isClicked }) => {
   return (
-    <div className="loader flex flex-col items-center justify-center h-screen dark:bg-primary bg-slate-100 transition-all duration-300">
+    <div className="loader flex h-screen flex-col items-center justify-center bg-slate-100 transition-all duration-300 dark:bg-primary">
       <svg>
         <g>
           <path d="M 50,100 A 1,1 0 0 1 50,0" />
@@ -29,7 +29,7 @@ export const InitialLoader = ({ isClicked }) => {
         </defs>
       </svg>
       <motion.div
-        className="bg-[#915eff] max-w-max mt-5 rounded"
+        className="mt-5 max-w-max rounded bg-[#915eff]"
         initial={{ opacity: 0, y: 100 }}
         animate={{
           opacity: 1,
@@ -40,7 +40,7 @@ export const InitialLoader = ({ isClicked }) => {
         <motion.button
           onClick={isClicked}
           whileHover={{ x: -4, y: -4 }}
-          className="border-2 dark:bg-black bg-slate-100 border-[#915eff] p-3 px-6 text-lg font-medium tracking-wider rounded text-[#915eff]"
+          className="rounded border-2 border-[#915eff] bg-slate-100 p-3 px-6 text-lg font-medium tracking-wider text-[#915eff] dark:bg-black"
         >
           Start...
         </motion.button>

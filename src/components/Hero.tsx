@@ -5,19 +5,19 @@ import { MagneticEffect } from "../hoc";
 
 export const Hero = () => {
   return (
-    <div className="relative w-full h-screen mx-auto bg-gradient-to-b dark:from-tertiary dark:via-tertiary from-slate-300 via-slate-100 to-transparent">
+    <div className="relative mx-auto min-h-screen w-full bg-gradient-to-b from-slate-300 via-slate-100 to-transparent dark:from-tertiary dark:via-tertiary">
       <div
-        className={`${styles.paddingX} pt-[120px] max-w-7xl mx-auto flex flex-col lg:gap-[200px] gap-[100px] items-start`}
+        className={`${styles.paddingX} mx-auto flex max-w-7xl flex-col items-start gap-[100px] pt-[120px] lg:gap-[200px]`}
       >
-        <div className="flex flex-col lg:flex-row lg:gap-[120px] gap-[100px] justify-between lg:items-end">
-          <div className="flex flex-col lg:gap-[120px] gap-[50px]">
+        <div className="flex flex-col justify-between gap-[100px] lg:flex-row lg:items-end lg:gap-[120px]">
+          <div className="flex flex-col gap-[50px] lg:gap-[120px]">
             <h1
               className={`${styles.heroHeadText} relative max-w-min pb-5 before:absolute before:bottom-0 before:h-3 before:w-36 before:bg-[#915eff]`}
             >
               Ramanan Balamurugan
               <span className="dot">.</span>
             </h1>
-            <div className="flex gap-x-[80px] hero-social">
+            <div className="hero-social flex gap-x-[80px]">
               <MagneticEffect>
                 <a href="">
                   <svg
@@ -116,15 +116,15 @@ export const Hero = () => {
             </div>
           </div>
           <div className="relative">
-            <div className="spotLight dark:lg:block hidden"></div>
-            <h5 className="relative transition-all duration-300 dark:text-secondary text-slate-500 lg:text-[20px] text-[15px] pl-5 before:absolute before:top-1/2 before:left-0 before:h-0.5 lg:before:w-4 before:w-3 before:bg-slate-500">
+            <div className="spotLight hidden lg:block"></div>
+            <h5 className="relative pl-5 text-[15px] text-slate-500 transition-all duration-300 before:absolute before:left-0 before:top-1/2 before:h-0.5 before:w-3 before:bg-slate-500 dark:text-secondary lg:text-[20px] lg:before:w-4">
               Introduction
             </h5>
-            <h3 className="transition-all duration-300 dark:text-gray text-slate-800 lg:text-[40px] text-[25px] font-bold mt-2">
+            <h3 className="mt-2 text-[25px] font-bold text-slate-800 transition-all duration-300 dark:text-gray lg:text-[40px]">
               UI/UX Designer <br /> and Full-Stack Developer
             </h3>
             <p
-              className={`mt-2 lg:text-[20px] transition-all duration-300 dark:text-secondary text-slate-500 !leading-[35px]`}
+              className={`mt-2 !leading-[35px] text-slate-500 transition-all duration-300 dark:text-secondary lg:text-[20px]`}
             >
               Hello! My name is Ramanan and I enjoy creating things that live on
               the internet. My interest in web development started back in 2019
@@ -134,15 +134,15 @@ export const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="grid md:grid-cols-2 lg:place-content-start place-content-center w-full">
-          <div className="w-full flex lg:justify-normal justify-center items-center">
+        <div className="grid w-full place-content-center md:grid-cols-2 lg:place-content-start">
+          <div className="flex w-full items-center justify-center lg:justify-normal">
             <a
               href="#about"
-              className="dark:text-gray text-tertiary flex items-center gap-5 font-semibold"
+              className="flex items-center gap-5 font-semibold text-tertiary dark:text-gray"
             >
-              <div className="w-9 h-16 rounded-3xl border-4 dark:border-gray border-slate-800 flex justify-center items-start p-2">
+              <div className="flex h-16 w-9 items-start justify-center rounded-3xl border-4 border-slate-800 p-2 dark:border-gray">
                 <motion.div
-                  className="w-3 h-3 rounded-full dark:bg-gray bg-slate-800 mb-1"
+                  className="mb-1 h-3 w-3 rounded-full bg-slate-800 dark:bg-gray"
                   animate={{
                     y: [0, 24, 0],
                   }}
@@ -172,10 +172,10 @@ export const Hero = () => {
               </span>
             </a>
           </div>
-          <motion.div className="bg-[#915eff] max-w-max my-5 rounded">
+          <motion.div className="my-5 max-w-max rounded bg-[#915eff]">
             <motion.button
               whileHover={{ x: -4, y: -4 }}
-              className="border-2 transition-all duration-300 dark:bg-tertiary bg-slate-100 border-[#915eff] p-3 px-6 text-lg font-medium tracking-wider rounded text-[#915eff]"
+              className="rounded border-2 border-[#915eff] bg-slate-100 p-3 px-6 text-lg font-medium tracking-wider text-[#915eff] transition-all duration-300 dark:bg-tertiary"
             >
               Check out my Blogs
             </motion.button>

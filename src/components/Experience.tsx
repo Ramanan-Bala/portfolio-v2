@@ -18,29 +18,29 @@ const ExperienceCard = ({ experience }) => {
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
-        <div className="flex justify-center items-center w-full h-full ">
+        <div className="flex h-full w-full items-center justify-center ">
           <img
             src={experience.icon}
             alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain"
+            className="h-[60%] w-[60%] object-contain"
           />
         </div>
       }
       intersectionObserverProps={{ triggerOnce: false }}
     >
       <div>
-        <h3 className="dark:text-white text-slate-800 text-[24px] font-bold">
+        <h3 className="text-[24px] font-bold text-slate-800 dark:text-white">
           {experience.title}
         </h3>
-        <p className="text-secondary text-base !m-0 font-semibold">
+        <p className="!m-0 text-base font-semibold text-secondary">
           {experience.company_name}
         </p>
       </div>
-      <ul className="mt-5 list-disc ml-5 space-y-2">
+      <ul className="ml-5 mt-5 list-disc space-y-2">
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className="dark:text-white-100 text-slate-600 text-sm pl-1 tracking-wider"
+            className="pl-1 text-sm tracking-wider text-slate-600 dark:text-white-100"
           >
             {point}
           </li>

@@ -23,10 +23,10 @@ const ContactSection = () => {
   const handelSubmit = () => {};
 
   return (
-    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+    <div className="flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 0.5)}
-        className="flex-[0.75] dark:bg-black-100 bg-slate-300/60 p-8 rounded-2xl"
+        className="flex-[0.75] rounded-2xl bg-slate-300/60 p-8 dark:bg-black-100"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>
@@ -38,7 +38,7 @@ const ContactSection = () => {
           className="mt-110 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="dark:text-white-100 text-slate-800 font-medium m-4">
+            <span className="m-4 font-medium text-slate-800 dark:text-white-100">
               Your Name
             </span>
             <input
@@ -47,11 +47,11 @@ const ContactSection = () => {
               value={form.name}
               onChange={handelChange}
               placeholder="What's your name?"
-              className="dark:bg-tertiary bg-slate-100 py-4 px-6 transition-all duration-300 placeholder:text-secondary dark:text-white-100 text-slate-800 rounded-lg outline-none border-none font-medium focus:ring-[1px] focus:ring-white focus:ring-offset-2 focus:ring-offset-white-100"
+              className="rounded-lg border-none bg-slate-100 px-6 py-4 font-medium text-slate-800 outline-none transition-all duration-300 placeholder:text-secondary focus:ring-[1px] focus:ring-white focus:ring-offset-2 focus:ring-offset-white-100 dark:bg-tertiary dark:text-white-100"
             />
           </label>
           <label className="flex flex-col">
-            <span className="dark:text-white-100 text-slate-800 font-medium m-4">
+            <span className="m-4 font-medium text-slate-800 dark:text-white-100">
               Your Email
             </span>
             <input
@@ -60,11 +60,11 @@ const ContactSection = () => {
               value={form.email}
               onChange={handelChange}
               placeholder="What's your email?"
-              className="dark:bg-tertiary bg-slate-100 py-4 px-6 transition-all duration-300 placeholder:text-secondary dark:text-white-100 text-slate-800 rounded-lg outline-none border-none font-medium focus:ring-[1px] focus:ring-white focus:ring-offset-2 focus:ring-offset-white-100"
+              className="rounded-lg border-none bg-slate-100 px-6 py-4 font-medium text-slate-800 outline-none transition-all duration-300 placeholder:text-secondary focus:ring-[1px] focus:ring-white focus:ring-offset-2 focus:ring-offset-white-100 dark:bg-tertiary dark:text-white-100"
             />
           </label>
           <label className="flex flex-col">
-            <span className="dark:text-white-100 text-slate-800 font-medium m-4">
+            <span className="m-4 font-medium text-slate-800 dark:text-white-100">
               Your Message
             </span>
             <textarea
@@ -73,13 +73,13 @@ const ContactSection = () => {
               value={form.message}
               onChange={handelChange}
               placeholder="What do you want to say?"
-              className="dark:bg-tertiary bg-slate-100 py-4 px-6 transition-all duration-300 placeholder:text-secondary dark:text-white-100 text-slate-800 rounded-lg outline-none border-none font-medium focus:ring-[1px] focus:ring-white focus:ring-offset-2 focus:ring-offset-white-100"
+              className="rounded-lg border-none bg-slate-100 px-6 py-4 font-medium text-slate-800 outline-none transition-all duration-300 placeholder:text-secondary focus:ring-[1px] focus:ring-white focus:ring-offset-2 focus:ring-offset-white-100 dark:bg-tertiary dark:text-white-100"
             />
           </label>
 
           <button
             type="submit"
-            className="dark:bg-tertiary bg-slate-100 py-3 px-8 outline-none w-fit dark:text-white-100 text-slate-500 font-bold shadow-md dark:shadow-primary shadow-slate-500 rounded-xl"
+            className="w-fit rounded-xl bg-slate-100 px-8 py-3 font-bold text-slate-500 shadow-md shadow-slate-500 outline-none dark:bg-tertiary dark:text-white-100 dark:shadow-primary"
           >
             {loading ? "Sending..." : "Send"}
           </button>
@@ -88,7 +88,7 @@ const ContactSection = () => {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 0.5)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        className="h-[350px] md:h-[550px] xl:h-auto xl:flex-1"
       >
         <Earth />
       </motion.div>

@@ -46,7 +46,7 @@ export const App = () => {
         if (element) {
           window.scrollTo(0, element.parentElement.offsetTop - 30);
         }
-      })
+      }),
     );
   });
 
@@ -71,7 +71,7 @@ export const App = () => {
         <InitialLoader isClicked={isClicked} />
       ) : (
         <BrowserRouter>
-          <div className="fixed top-0 w-full z-10">
+          <div className="fixed top-0 z-10 w-full">
             <Navbar />
           </div>
           <Social />
@@ -79,7 +79,7 @@ export const App = () => {
             {/* <div className="card z-[-1] "> */}
             <Hero />
             {/* </div> */}
-            <div className="dark:bg-primary bg-slate-100 transition-all duration-300 overflow-hidden">
+            <div className="overflow-hidden bg-slate-100 transition-all duration-300 dark:bg-primary">
               <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat py-12">
                 <About />
               </div>

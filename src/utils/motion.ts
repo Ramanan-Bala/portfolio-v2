@@ -20,7 +20,7 @@ export const fadeIn = (
   direction: "right" | "left" | "up" | "down" | "",
   type: string,
   delay: number,
-  duration: number
+  duration: number,
 ) => {
   return {
     hidden: {
@@ -65,7 +65,7 @@ export const slideIn = (
   direction: "right" | "left" | "up" | "down",
   type: string,
   delay: number,
-  duration: number
+  duration: number,
 ) => {
   return {
     hidden: {
@@ -87,7 +87,7 @@ export const slideIn = (
 
 export const staggerContainer = (
   staggerChildren?: any,
-  delayChildren?: number
+  delayChildren?: number,
 ) => {
   return {
     hidden: {},

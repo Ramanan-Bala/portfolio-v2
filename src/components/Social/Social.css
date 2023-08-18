@@ -1,5 +1,5 @@
 .float {
-  @apply md:flex hidden;
+  @apply hidden md:flex;
   justify-items: center;
   align-items: center;
   flex-direction: column;
@@ -12,7 +12,7 @@
 }
 
 .line {
-  @apply dark:border-white border-slate-800;
+  @apply border-slate-800 dark:border-white;
   height: 75px;
   border: 0.5px solid;
 }
@@ -22,11 +22,11 @@
 }
 
 .social div:not(:first-child) a svg path {
-  @apply dark:stroke-gray stroke-black;
+  @apply stroke-black dark:stroke-gray;
 }
 
 .social div:first-child a svg path {
-  @apply dark:fill-gray fill-black;
+  @apply fill-black dark:fill-gray;
 }
 
 .social svg {
@@ -59,7 +59,7 @@
 }
 
 .mail span {
-  @apply dark:text-gray text-slate-800 text-xs;
+  @apply text-xs text-slate-800 dark:text-gray;
   letter-spacing: 0.05em;
   writing-mode: vertical-rl;
   text-align: center;
