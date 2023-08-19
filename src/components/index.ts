@@ -1,3 +1,4 @@
+import { NavLink } from "./NavLink";
 import { Social } from "./Social/Social";
 import { Computers, Earth, Ball } from "./canvas";
 import { Hero } from "./Hero";
@@ -11,10 +12,12 @@ import { Contact } from "./Contact";
 import { InitialLoader } from "./Loader/Loader";
 import { Cursor } from "./Cursor/Cursor";
 import { Blob } from "./Cursor/Blob";
+import { Curve } from "./Curve";
 
 export {
   Hero,
   Navbar,
+  NavLink,
   About,
   Tech,
   Experience,
@@ -29,4 +32,5 @@ export {
   Cursor,
   Blob,
   Social,
+  Curve,
 };

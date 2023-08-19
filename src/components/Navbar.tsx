@@ -5,11 +5,14 @@ import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
 import { MagneticEffect } from "../hoc";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { menuSlide } from "../utils/motion";
+import { Curve, NavLink } from ".";
 
 export const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [selectedIndicator, setSelectedIndicator] = useState(active);
 
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
@@ -68,15 +71,15 @@ export const Navbar = () => {
             <ul className="hidden list-none flex-row gap-10 sm:flex">
               {navLinks.map((link, index) => (
                 <a
-                  href={`#${link.id}`}
-                  key={link.id}
+                  href={`#${link.href}`}
+                  key={link.href}
                   className={`${
-                    active === link.id
+                    active === link.href
                       ? "text-slate-800 dark:text-white"
                       : "text-slate-500 dark:text-secondary"
                   } cursor-pointer text-[18px] font-medium transition-all duration-300 hover:text-slate-800 dark:hover:text-white`}
                   onClick={() => {
-                    setActive(link.id);
+                    setActive(link.href);
                   }}
                 >
                   {index + 1}.&nbsp;&nbsp;{link.title}
@@ -85,7 +88,7 @@ export const Navbar = () => {
             </ul>
             <MagneticEffect>
               <button
-                className="theme-toggle--button"
+                className="theme-toggle--button z-10"
                 aria-label="Toggle Theme"
                 onClick={changeTheme}
               >
@@ -103,21 +106,56 @@ export const Navbar = () => {
           </div>
           <div className="flex items-center justify-end sm:hidden">
             <img
-              src={menu}
+              src={toggle ? close : menu}
               alt="menu"
-              className="h-[28px] w-[28px] cursor-pointer object-contain invert filter dark:invert-0"
+              className={`${
+                !toggle && "invert"
+              } z-10 h-[28px] w-[28px] cursor-pointer object-contain filter dark:invert-0`}
               onClick={() => setToggle(!toggle)}
             />
-            {/* {toggle && ( */}
-            <motion.div
-              initial={{ opacity: 0, x: 0 }}
+            <AnimatePresence mode="wait">
+              {toggle && (
+                <motion.div
+                  variants={menuSlide}
+                  initial="initial"
+                  animate="enter"
+                  exit="exit"
+                  className="menu"
+                >
+                  <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-2/3 flex-col gap-10">
+                    <h1 className="mt-5 border-b border-white text-xl !text-white">
+                      Menu.
+                    </h1>
+                    <div className="flex flex-col gap-10">
+                      {navLinks.map((data, index) => (
+                        <NavLink
+                          key={index}
+                          data={{ ...data, index }}
+                          isActive={selectedIndicator == data.href}
+                          setSelectedIndicator={setSelectedIndicator}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <Curve />
+                </motion.div>
+
+                /* <motion.div
+              initial={{
+                opacity: 0,
+                x: 0,
+                borderTopLeftRadius: "50%",
+                borderBottomLeftRadius: "50%",
+              }}
               animate={{
                 opacity: 1,
                 x: toggle ? 0 : 800,
                 backdropFilter: "blur(10px)",
+                borderTopLeftRadius: "0%",
+                borderBottomLeftRadius: "0%",
               }}
-              transition={{ duration: 0.3 }}
-              className="absolute right-0 top-0 z-10 flex h-screen w-[calc(100vw-5vw)] flex-col rounded-l-xl bg-white p-2 dark:bg-black"
+              transition={{ duration: 1 }}
+              className="absolute right-0 top-0 z-10 flex h-screen w-[calc(100vw-5vw)] flex-col bg-white p-2 dark:bg-black"
             >
               <div className="flex items-center">
                 <h1 className={`${styles.heroHeadText} w-full text-center`}>
@@ -126,7 +164,7 @@ export const Navbar = () => {
                 <img
                   src={toggle ? close : menu}
                   alt="menu"
-                  className="h-[28px] w-[28px] cursor-pointer object-contain invert filter dark:invert-0"
+                  className="mr-2 h-[28px] w-[28px] cursor-pointer object-contain invert filter dark:invert-0"
                   onClick={() => setToggle(!toggle)}
                 />
               </div>
@@ -152,8 +190,9 @@ export const Navbar = () => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
-            {/* )} */}
+            </motion.div> */
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>

@@ -2,14 +2,15 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 // import { Computers } from ".";
 import { MagneticEffect } from "../hoc";
+import { Text } from "./InfiniteText";
 
 export const Hero = () => {
   return (
     <div className="relative mx-auto min-h-screen w-full bg-gradient-to-b from-slate-300 via-slate-100 to-transparent dark:from-tertiary dark:via-tertiary">
       <div
-        className={`${styles.paddingX} mx-auto flex max-w-7xl flex-col items-start gap-[100px] pt-[120px] lg:gap-[200px]`}
+        className={`${styles.paddingX} mx-auto flex max-w-7xl flex-col items-start gap-[80px] pt-[120px]`}
       >
-        <div className="flex flex-col justify-between gap-[100px] lg:flex-row lg:items-end lg:gap-[120px]">
+        <div className="flex flex-col justify-start gap-[100px] lg:flex-row lg:items-end lg:gap-[120px]">
           <div className="flex flex-col gap-[50px] lg:gap-[120px]">
             <h1
               className={`${styles.heroHeadText} relative max-w-min pb-5 before:absolute before:bottom-0 before:h-3 before:w-36 before:bg-[#915eff]`}
@@ -17,7 +18,7 @@ export const Hero = () => {
               Ramanan Balamurugan
               <span className="dot">.</span>
             </h1>
-            <div className="hero-social flex gap-x-[80px]">
+            <div className="hero-social flex gap-x-[50px] md:gap-x-[80px]">
               <MagneticEffect>
                 <a href="">
                   <svg
@@ -181,6 +182,7 @@ export const Hero = () => {
             </motion.button>
           </motion.div>
         </div>
+        <Text baseVelocity={5}>UI/UX Designer - Full-Stack Developer</Text>
       </div>
       {/* <Computers /> */}
     </div>

@@ -4,6 +4,7 @@ import { styles } from "./styles";
 import { useMousePosition } from "./utils/useMousePosition";
 import { useState } from "react";
 import { MagneticEffect } from "./hoc";
+import { Text } from "./components/InfiniteText";
 
 export const Mask = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -23,7 +24,7 @@ export const Mask = () => {
     >
       <div className="relative h-screen">
         <div
-          className={`${styles.paddingX} mx-auto flex max-w-7xl flex-col items-start gap-[100px] pt-[120px] lg:gap-[200px]`}
+          className={`${styles.paddingX} mx-auto flex max-w-7xl flex-col items-start gap-[80px] pt-[120px]`}
         >
           <div className="flex flex-col justify-between gap-[100px] lg:flex-row lg:items-end lg:gap-[120px]">
             <div className="flex flex-col gap-[50px] lg:gap-[120px]">
@@ -211,6 +212,17 @@ export const Mask = () => {
                 Check out my Blogs
               </motion.button>
             </motion.div>
+          </div>
+          <div
+            className="w-full"
+            onMouseEnter={() => {
+              setIsHovered(true);
+            }}
+            onMouseLeave={() => {
+              setIsHovered(false);
+            }}
+          >
+            <Text baseVelocity={5}>UI/UX Designer - Full-Stack Developer</Text>
           </div>
         </div>
       </div>

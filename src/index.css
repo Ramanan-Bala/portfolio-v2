@@ -234,6 +234,38 @@ html.dark ~ .theme-toggle--button {
   background-color: var(--color);
 }
 
+.svgCurve {
+  position: absolute;
+  top: 0;
+  left: -99px;
+  width: 100px;
+  height: 100%;
+  fill: rgb(41, 41, 41);
+  stroke: none;
+}
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .indicator {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: -30px;
+  }
+}
+.menu {
+  height: 100vh;
+  background-color: rgb(41, 41, 41);
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 80vw;
+}
+
 .mask {
   left: 0;
   position: absolute;
@@ -279,6 +311,14 @@ html.dark .mask .hero-social div a svg path {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html.dark .spotLight {
+  background: radial-gradient(
+    44.91% 82.4% at 50% 17.6%,
+    rgba(145, 94, 255, 0.42) 0%,
+    rgba(145, 94, 255, 0) 100%
+  );
+}
+
 .spotLight {
   position: absolute;
   top: 50%;
@@ -286,9 +326,35 @@ html.dark .mask .hero-social div a svg path {
   transform: translate(-50%, -50%);
   width: 700px;
   height: 700px;
-  background: radial-gradient(
-    44.91% 82.4% at 50% 17.6%,
-    rgba(145, 94, 255, 0.42) 0%,
-    rgba(145, 94, 255, 0) 100%
-  );
+}
+
+.parallax {
+  max-width: 100%;
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 64px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax span {
+  @apply text-tertiary dark:text-gray;
+  display: block;
+  margin-right: 30px;
+}
+
+.mask .parallax span {
+  @apply text-gray dark:text-tertiary;
 }
