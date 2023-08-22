@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "GT Flexa";
+  src:
+    local("GT Flexa Light"),
+    local("GTFlexa-Light"),
+    url("GTFlexa-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Flexa";
+  src:
+    local("GT Flexa Regular"),
+    local("GTFlexa-Regular"),
+    url("GTFlexa-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Flexa";
+  src:
+    local("GT Flexa Thin"),
+    local("GTFlexa-Thin"),
+    url("GTFlexa-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Flexa";
+  src:
+    local("GT Flexa Bold"),
+    local("GTFlexa-Bold"),
+    url("GTFlexa-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Flexa";
+  src:
+    local("GT Flexa Medium"),
+    local("GTFlexa-Medium"),
+    url("GTFlexa-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Flexa";
+  src:
+    local("GT Flexa Black"),
+    local("GTFlexa-Black"),
+    url("GTFlexa-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}

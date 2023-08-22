@@ -40,6 +40,8 @@ import express from "./express.png";
 import mysql from "./mysql.png";
 import python from "./python.png";
 import java from "./java.png";
+import pressHand from "./press-hand.svg";
+import pressText from "./press-text.svg";
 
 export {
   logo,
@@ -80,4 +82,6 @@ export {
   simplyDoc,
   streetVendors,
   attendance,
+  pressHand,
+  pressText,
 };

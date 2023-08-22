@@ -1,4 +1,4 @@
-@import url("./assets/font/stylesheet.css");
+@import url("./assets/font 2/stylesheet.css");
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "GT Walsheim Pro";
+  font-family: "GT Flexa";
   scroll-behavior: smooth;
 }
 

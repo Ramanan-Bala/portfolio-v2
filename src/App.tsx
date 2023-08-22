@@ -11,6 +11,7 @@ import {
 } from "./components";
 import { useEffect, useState } from "react";
 
+// import { pressHand, pressText } from "./assets";
 import "./stars.css";
 import { SmoothScroll } from "./hoc";
 import { debounce } from "./utils/debounce";
@@ -20,6 +21,7 @@ export const App = () => {
   const theme = localStorage.getItem("theme");
 
   const [isLoading, setLoading] = useState(true);
+  const [isFull] = useState(false);
 
   const isClicked = () => {
     setLoading(false);
@@ -64,8 +66,19 @@ export const App = () => {
 
   return (
     <>
-      {/* <div className="absolute pointer-events-none hidden sm:flex">
-        <Cursor />
+      {/* <div className="fixed bottom-0 left-1/2 z-50 flex h-[120px] w-full -translate-x-1/2 bg-gradient-to-t from-tertiary via-tertiary to-transparent sm:hidden">
+        <button onClick={() => setFull(!isFull)} className="w-full">
+          <img
+            src={pressHand}
+            alt=""
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+          />
+          <img
+            src={pressText}
+            alt=""
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+          />
+        </button>
       </div> */}
       {isLoading ? (
         <InitialLoader isClicked={isClicked} />
@@ -91,7 +104,7 @@ export const App = () => {
                 <Contact />
               </div>
             </div>
-            <Mask />
+            <Mask isFull={isFull} />
           </SmoothScroll>
         </BrowserRouter>
       )}

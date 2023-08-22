@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { styles } from "./styles";
 import { useMousePosition } from "./utils/useMousePosition";
 import { useState } from "react";
-import { MagneticEffect } from "./hoc";
+import { MagneticEffect, WavyText } from "./hoc";
 import { Text } from "./components/InfiniteText";
 
-export const Mask = () => {
+export const Mask = ({ isFull }: { isFull: boolean }) => {
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
-  const size = isHovered ? 400 : 40;
+  const size = isFull ? 10000 : isHovered ? 400 : 40;
 
   return (
     <motion.div
@@ -22,18 +22,21 @@ export const Mask = () => {
       }}
       transition={{ type: "tween", ease: "backOut", duration: 0.3 }}
     >
-      <div className="relative h-screen">
+      <div className="relative min-h-screen">
         <div
           className={`${styles.paddingX} mx-auto flex max-w-7xl flex-col items-start gap-[80px] pt-[120px]`}
         >
           <div className="flex flex-col justify-between gap-[100px] lg:flex-row lg:items-end lg:gap-[120px]">
             <div className="flex flex-col gap-[50px] lg:gap-[120px]">
-              <h1
-                className={`${styles.heroHeadText} text-dark relative max-w-min pb-5 before:absolute before:bottom-0 before:h-3 before:w-36 before:bg-tertiary dark:before:bg-gray`}
+              <div
+                className={`${styles.heroHeadText} text-dark relative pb-5 before:absolute before:bottom-0 before:h-3 before:w-36 before:bg-tertiary dark:before:bg-gray`}
               >
-                Ramanan Balamurugan
-                <span className="text-white">.</span>
-              </h1>
+                <WavyText text="Ramanan" />
+                <div className="flex">
+                  <WavyText text="Balamurugan" delay={0.35} />
+                  <span className="text-white">.</span>
+                </div>
+              </div>
               <div className="hero-social flex gap-x-[80px]">
                 <MagneticEffect>
                   <a href="">

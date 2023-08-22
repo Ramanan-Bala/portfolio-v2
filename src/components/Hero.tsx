@@ -1,10 +1,27 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-// import { Computers } from ".";
-import { MagneticEffect } from "../hoc";
+import { MagneticEffect, WavyText } from "../hoc";
 import { Text } from "./InfiniteText";
 
 export const Hero = () => {
+  const container = {
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+  const child = {
+    hidden: {
+      opacity: 0,
+      x: -1000,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
   return (
     <div className="relative mx-auto min-h-screen w-full bg-gradient-to-b from-slate-300 via-slate-100 to-transparent dark:from-tertiary dark:via-tertiary">
       <div
@@ -12,12 +29,15 @@ export const Hero = () => {
       >
         <div className="flex flex-col justify-start gap-[100px] lg:flex-row lg:items-end lg:gap-[120px]">
           <div className="flex flex-col gap-[50px] lg:gap-[120px]">
-            <h1
-              className={`${styles.heroHeadText} relative max-w-min pb-5 before:absolute before:bottom-0 before:h-3 before:w-36 before:bg-[#915eff]`}
+            <div
+              className={`${styles.heroHeadText} relative pb-5 before:absolute before:bottom-0 before:h-3 before:w-36 before:bg-[#915eff]`}
             >
-              Ramanan Balamurugan
-              <span className="dot">.</span>
-            </h1>
+              <WavyText text="Ramanan" />
+              <div className="flex">
+                <WavyText text="Balamurugan" delay={0.35} />
+                <span className="dot">.</span>
+              </div>
+            </div>
             <div className="hero-social flex gap-x-[50px] md:gap-x-[80px]">
               <MagneticEffect>
                 <a href="">
@@ -37,7 +57,6 @@ export const Hero = () => {
                   </svg>
                 </a>
               </MagneticEffect>
-
               <MagneticEffect>
                 <a href="">
                   <svg
@@ -116,27 +135,53 @@ export const Hero = () => {
               </MagneticEffect>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative flex flex-col">
             <div className="spotLight hidden lg:block"></div>
-            <h5 className="relative pl-5 text-[15px] text-slate-500 transition-all duration-300 before:absolute before:left-0 before:top-1/2 before:h-0.5 before:w-3 before:bg-slate-500 dark:text-secondary lg:text-[20px] lg:before:w-4">
-              Introduction
-            </h5>
-            <h3 className="mt-2 text-[25px] font-bold text-slate-800 transition-all duration-300 dark:text-gray lg:text-[40px]">
-              UI/UX Designer <br /> and Full-Stack Developer
-            </h3>
-            <p
-              className={`mt-2 !leading-[35px] text-slate-500 transition-all duration-300 dark:text-secondary lg:text-[20px]`}
-            >
-              Hello! My name is Ramanan and I enjoy creating things that live on
-              the internet. My interest in web development started back in 2019
-              when I decided to see what my dad is doing — turns out hacking
-              together a custom html components taught me a lot about HTML &
-              CSS!
-            </p>
+            <motion.div variants={container} initial="hidden" animate="visible">
+              <div className="overflow-hidden">
+                <motion.h5
+                  variants={child}
+                  className="relative pl-5 text-[15px] text-slate-500 transition-all duration-300 before:absolute before:left-0 before:top-1/2 before:h-0.5 before:w-3 before:bg-slate-500 dark:text-secondary lg:text-[20px] lg:before:w-4"
+                >
+                  Introduction
+                </motion.h5>
+              </div>
+              <div className="overflow-hidden">
+                <motion.h3
+                  variants={child}
+                  className="mt-2 text-[25px] font-bold text-slate-800 transition-all duration-300 dark:text-gray lg:text-[40px]"
+                >
+                  UI/UX Designer <br /> and Full-Stack Developer
+                </motion.h3>
+              </div>
+              <div className="overflow-hidden">
+                <motion.p
+                  variants={child}
+                  className={`mt-2 !leading-[35px] text-slate-500 transition-all duration-300 dark:text-secondary lg:text-[20px]`}
+                >
+                  Hello! My name is Ramanan and I enjoy creating things that
+                  live on the internet. My interest in web development started
+                  back in 2019 when I decided to see what my dad is doing —
+                  turns out hacking together a custom html components taught me
+                  a lot about HTML & CSS!
+                </motion.p>
+              </div>
+            </motion.div>
           </div>
         </div>
-        <div className="grid w-full place-content-center md:grid-cols-2 lg:place-content-start">
-          <div className="flex w-full items-center justify-center lg:justify-normal">
+        <div className="grid w-full place-content-center overflow-hidden md:grid-cols-2 lg:place-content-start">
+          <motion.div
+            initial={{ opacity: 0, y: -70 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              damping: 12,
+              stiffness: 200,
+              duration: 0.5,
+              delay: 1.2,
+            }}
+            className="flex w-full items-center justify-center lg:justify-normal"
+          >
             <a
               href="#about"
               className="flex items-center gap-5 font-semibold text-tertiary dark:text-gray"
@@ -172,8 +217,19 @@ export const Hero = () => {
                 </svg>
               </span>
             </a>
-          </div>
-          <motion.div className="my-5 max-w-max rounded bg-[#915eff]">
+          </motion.div>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{
+              type: "spring",
+              damping: 12,
+              stiffness: 200,
+              duration: 0.5,
+              delay: 1.2,
+            }}
+            className="my-5 max-w-max rounded bg-[#915eff]"
+          >
             <motion.button
               whileHover={{ x: -4, y: -4 }}
               className="rounded border-2 border-[#915eff] bg-slate-100 p-3 px-6 text-lg font-medium tracking-wider text-[#915eff] transition-all duration-300 dark:bg-tertiary"
@@ -184,7 +240,6 @@ export const Hero = () => {
         </div>
         <Text baseVelocity={5}>UI/UX Designer - Full-Stack Developer</Text>
       </div>
-      {/* <Computers /> */}
     </div>
   );
 };

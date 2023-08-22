@@ -77,12 +77,12 @@ export const Navbar = () => {
                     active === link.href
                       ? "text-slate-800 dark:text-white"
                       : "text-slate-500 dark:text-secondary"
-                  } cursor-pointer text-[18px] font-medium transition-all duration-300 hover:text-slate-800 dark:hover:text-white`}
+                  } relative cursor-pointer text-[18px] font-medium transition-all duration-300 hover:text-slate-800 dark:hover:text-white`}
                   onClick={() => {
                     setActive(link.href);
                   }}
                 >
-                  {index + 1}.&nbsp;&nbsp;{link.title}
+                  <AnimatedLink title={`${index + 1}.  ${link.title}`} />
                 </a>
               ))}
             </ul>
@@ -139,63 +139,101 @@ export const Navbar = () => {
                   </div>
                   <Curve />
                 </motion.div>
-
-                /* <motion.div
-              initial={{
-                opacity: 0,
-                x: 0,
-                borderTopLeftRadius: "50%",
-                borderBottomLeftRadius: "50%",
-              }}
-              animate={{
-                opacity: 1,
-                x: toggle ? 0 : 800,
-                backdropFilter: "blur(10px)",
-                borderTopLeftRadius: "0%",
-                borderBottomLeftRadius: "0%",
-              }}
-              transition={{ duration: 1 }}
-              className="absolute right-0 top-0 z-10 flex h-screen w-[calc(100vw-5vw)] flex-col bg-white p-2 dark:bg-black"
-            >
-              <div className="flex items-center">
-                <h1 className={`${styles.heroHeadText} w-full text-center`}>
-                  Menu.
-                </h1>
-                <img
-                  src={toggle ? close : menu}
-                  alt="menu"
-                  className="mr-2 h-[28px] w-[28px] cursor-pointer object-contain invert filter dark:invert-0"
-                  onClick={() => setToggle(!toggle)}
-                />
-              </div>
-              <div className="flex h-full w-full items-center justify-center">
-                <ul className="flex list-none flex-col gap-16">
-                  {navLinks.map((link, index) => (
-                    <li
-                      key={link.id}
-                      className={`${
-                        active === link.id
-                          ? "text-slate-800 dark:text-white"
-                          : "text-slate-500 dark:text-secondary"
-                      } cursor-pointer text-5xl font-semibold`}
-                      onClick={() => {
-                        setActive(link.id);
-                        setToggle(!toggle);
-                      }}
-                    >
-                      <a href={`#${link.id}`}>
-                        {index + 1}. {link.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div> */
               )}
             </AnimatePresence>
           </div>
         </div>
       </div>
     </nav>
+  );
+};
+
+const AnimatedLink = ({ title }) => {
+  const [isHovered, setHovered] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="relative cursor-pointer overflow-hidden"
+    >
+      <AnimatedWord
+        title={title}
+        animation={letterAnimation}
+        isHovered={isHovered}
+      />
+      <div className="absolute top-0">
+        <AnimatedWord
+          title={title}
+          animation={letterAnimation2}
+          isHovered={isHovered}
+        />
+      </div>
+    </div>
+  );
+};
+
+const titleAnimation = {
+  rest: {
+    transition: {
+      staggerChildren: 0.015,
+    },
+  },
+  hover: {
+    transition: {
+      staggerChildren: 0.015,
+    },
+  },
+};
+
+const letterAnimation = {
+  rest: {
+    y: 0,
+  },
+  hover: {
+    y: -25,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, 0.01, 0.05, 0.95],
+      type: "tween",
+    },
+  },
+};
+
+const letterAnimation2 = {
+  rest: {
+    y: 25,
+  },
+  hover: {
+    y: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, 0.01, 0.05, 0.95],
+      type: "tween",
+    },
+  },
+};
+
+const AnimatedWord = ({ title, animation, isHovered }) => {
+  return (
+    <motion.span
+      variants={titleAnimation}
+      initial="rest"
+      animate={isHovered ? "hover" : "rest"}
+      className="relative whitespace-nowrap"
+    >
+      {title.split("").map((letter, index) =>
+        letter === " " ? (
+          <span key={index}>&nbsp;</span>
+        ) : (
+          <motion.span
+            variants={animation}
+            className="relative inline-block whitespace-nowrap"
+            key={index}
+          >
+            {letter}
+          </motion.span>
+        ),
+      )}
+    </motion.span>
   );
 };
