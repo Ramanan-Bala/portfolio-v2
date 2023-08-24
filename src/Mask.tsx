@@ -4,7 +4,7 @@ import { styles } from "./styles";
 import { useMousePosition } from "./utils/useMousePosition";
 import { useState } from "react";
 import { MagneticEffect, WavyText } from "./hoc";
-import { Text } from "./components/InfiniteText";
+// import { Text } from "./components/InfiniteText";
 
 export const Mask = ({ isFull }: { isFull: boolean }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -225,7 +225,7 @@ export const Mask = ({ isFull }: { isFull: boolean }) => {
               setIsHovered(false);
             }}
           >
-            <Text baseVelocity={5}>UI/UX Designer - Full-Stack Developer</Text>
+            {/* <Text baseVelocity={5}>UI/UX Designer - Full-Stack Developer</Text> */}
           </div>
         </div>
       </div>

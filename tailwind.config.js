@@ -24,6 +24,28 @@ export default {
       backgroundImage: {
         "hero-pattern": "url('/src/assets/hero-bg.png')",
       },
+      animation: {
+        slideleft: "slideleft 1s ease-in-out",
+        slideleftT2: "slideleft 1.2s ease-in-out",
+        slideleftT3: "slideleft 1.3s ease-in-out",
+        slideleftT4: "slideleft 1.6s ease-in-out",
+        slidebottom: "slidebottom 1s ease-in-out",
+        slidebottomT2: "slidebottom 1.2s ease-in-out",
+        slidebottomT3: "slidebottom 1.3s ease-in-out",
+        slidebottomT4: "slidebottom 1.6s ease-in-out",
+      },
+      keyframes: {
+        slideleft: {
+          from: { opacity: 0, transform: "translateX(500px)" },
+          "75%": { transform: "translateX(-10px)" },
+          to: { opacity: 1, transform: "translateX(0)" },
+        },
+        slidebottom: {
+          from: { opacity: 0, transform: "translateY(100%)" },
+          "75%": { transform: "translateY(-10px)" },
+          to: { opacity: 1, transform: "none" },
+        },
+      },
     },
   },
   plugins: [],

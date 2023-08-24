@@ -44,13 +44,18 @@ export const Text = ({ children, baseVelocity = 100 }: ParallaxProps) => {
   });
 
   return (
-    <div className="parallax">
+    <motion.div
+      initial={{ maxWidth: 0 }}
+      animate={{ maxWidth: "100%" }}
+      transition={{ duration: 1 }}
+      className="parallax"
+    >
       <motion.div className="scroller" style={{ x }}>
         <span>{children} </span>
         <span>{children} </span>
         <span>{children} </span>
         <span>{children} </span>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };

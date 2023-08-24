@@ -1,50 +1,106 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { slideUp } from "../../utils/motion";
 import "./Loader.css";
+export const InitialLoader = () => {
+  const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
-export const InitialLoader = ({ isClicked }) => {
+  useEffect(() => {
+    setDimension({ width: window.innerWidth, height: window.innerHeight });
+  }, []);
+
+  const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
+    dimension.height
+  } Q${dimension.width / 2} ${dimension.height + 300} 0 ${
+    dimension.height
+  }  L0 0`;
+  const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
+    dimension.height
+  } Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`;
+
+  const curve = {
+    initial: {
+      d: initialPath,
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+    },
+    exit: {
+      d: targetPath,
+      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 },
+    },
+  };
   return (
-    <div className="loader flex h-screen flex-col items-center justify-center bg-slate-100 transition-all duration-300 dark:bg-primary">
-      <svg>
-        <g>
-          <path d="M 50,100 A 1,1 0 0 1 50,0" />
-        </g>
-        <g>
-          <path d="M 50,75 A 1,1 0 0 0 50,-25" />
-        </g>
-        <defs>
-          <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop
-              offset="0%"
-              style={{ stopColor: "#915eff", stopOpacity: 1 }}
-            />
-            <stop
-              offset="50%"
-              style={{ stopColor: "rgb(236, 64, 122)", stopOpacity: 1 }}
-            />
-            <stop
-              offset="100%"
-              style={{ stopColor: "rgb(253, 216, 53)", stopOpacity: 1 }}
-            />
-          </linearGradient>
-        </defs>
-      </svg>
-      <motion.div
-        className="mt-5 max-w-max rounded bg-[#915eff]"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{
-          opacity: 1,
-          y: 0,
-          transition: { delay: 1, duration: 0.5 },
-        }}
-      >
-        <motion.button
-          onClick={isClicked}
-          whileHover={{ x: -4, y: -4 }}
-          className="rounded border-2 border-[#915eff] bg-slate-100 p-3 px-6 text-lg font-medium tracking-wider text-[#915eff] dark:bg-black"
-        >
-          Start...
-        </motion.button>
-      </motion.div>
-    </div>
+    <motion.div
+      variants={slideUp}
+      animate="enter"
+      initial="initial"
+      exit="exit"
+      className="introduction flex h-screen flex-col items-center justify-center"
+    >
+      {dimension.width > 0 && (
+        <>
+          <div className="relative z-10">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <Counter from={0} to={100} />
+            </div>
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              width="500px"
+              height="500px"
+              viewBox="0 0 500 500"
+              xmlSpace="preserve"
+              className="spin"
+            >
+              <path
+                id="circlePath"
+                d="M 110, 250 a 140,140 0 1,1 280,0 a 140,140 0 1,1 -280,0"
+                fill="none"
+              />
+              <g>
+                <use xlinkHref="#circlePath" />
+                <text className="fill-gray dark:fill-black" fontSize="22px">
+                  <textPath xlinkHref="#circlePath">
+                    Loading • Loading • Loading • Loading • Loading • Loading •
+                    Loading • Loading • Loading •
+                  </textPath>
+                </text>
+              </g>
+            </svg>
+          </div>
+          <svg className="curve">
+            <motion.path
+              variants={curve}
+              initial="initial"
+              exit="exit"
+            ></motion.path>
+          </svg>
+        </>
+      )}
+    </motion.div>
+  );
+};
+
+import { animate } from "framer-motion";
+import { useRef } from "react";
+
+const Counter = ({ from, to }) => {
+  const nodeRef = useRef();
+
+  useEffect(() => {
+    const node: any = nodeRef.current;
+
+    const controls = animate(from, to, {
+      duration: 3,
+      onUpdate(value) {
+        node.textContent = value.toFixed(0) + "%";
+      },
+    });
+
+    return () => controls.stop();
+  }, [from, to]);
+
+  return (
+    <p ref={nodeRef} className="text-2xl font-bold text-gray dark:text-black" />
   );
 };

@@ -1,21 +1,3 @@
-export const textVariant = (delay: number) => {
-  return {
-    hidden: {
-      y: -30,
-      opacity: 0,
-    },
-    show: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        duration: 1.25,
-        delay: delay,
-      },
-    },
-  };
-};
-
 export const fadeIn = (
   direction: "right" | "left" | "up" | "down" | "",
   type: string,
@@ -41,26 +23,6 @@ export const fadeIn = (
     },
   };
 };
-
-export const zoomIn = (delay: number, duration: number) => {
-  return {
-    hidden: {
-      scale: 0,
-      opacity: 0,
-    },
-    show: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "tween",
-        delay: delay,
-        duration: duration,
-        ease: "easeOut",
-      },
-    },
-  };
-};
-
 export const slideIn = (
   direction: "right" | "left" | "up" | "down",
   type: string,
@@ -124,4 +86,29 @@ export const slide = {
 export const scale = {
   open: { scale: 1, transition: { duration: 0.3 } },
   closed: { scale: 0, transition: { duration: 0.4 } },
+};
+
+// export const opacity = {
+//   initial: {
+//     opacity: 0,
+//   },
+//   enter: {
+//     opacity: 0.75,
+//     transition: { duration: 1, delay: 0.2 },
+//   },
+// };
+
+export const slideUp = {
+  initial: {
+    top: "-100vh",
+    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
+  },
+  enter: {
+    top: 0,
+    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+  },
+  exit: {
+    top: "-100vh",
+    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
+  },
 };

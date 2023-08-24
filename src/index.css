@@ -4,6 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .animation-delay-75 {
+    animation-delay: 75ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-750 {
+    animation-delay: 750ms;
+  }
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -48,7 +69,7 @@ body {
   );
 }
 
-.green-pink-gradient {
+.violet-gradient-background {
   background: "#00cea8";
   background: linear-gradient(
     -90deg,
@@ -64,53 +85,21 @@ body {
   );
 }
 
-html.dark svg.hero-name text {
-  animation: textAnimate 5s infinite alternate;
+.spin {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .dot {
   color: #915eff;
-}
-
-svg.hero-name text {
-  @apply stroke-[#804dee];
-  color: #915eff;
-  font-family: "GT Walsheim Pro", serif;
-  font-weight: 700;
-  stroke-linecap: round;
-  stroke-miterlimit: 10;
-  stroke-width: 1px;
-  stroke-dasharray: 800;
-  stroke-dashoffset: 800;
-  animation: textAnimateLight 5s infinite alternate;
-}
-
-@keyframes textAnimateLight {
-  0% {
-    stroke-dasharray: 0 50%;
-    stroke-dashoffset: 20%;
-    fill: #804deeae;
-  }
-
-  100% {
-    stroke-dasharray: 50% 0;
-    stroke-dashoffset: -20%;
-    fill: #804dee00;
-  }
-}
-
-@keyframes textAnimate {
-  0% {
-    stroke-dasharray: 0 50%;
-    stroke-dashoffset: 20%;
-    fill: hsl(189, 68%, 75%);
-  }
-
-  100% {
-    stroke-dasharray: 50% 0;
-    stroke-dashoffset: -20%;
-    fill: hsla(189, 68%, 75%, 0%);
-  }
 }
 
 .vertical-timeline-element-content {
@@ -124,34 +113,11 @@ svg.hero-name text {
   @apply text-[#1d1836] dark:text-white;
 }
 
-#blob {
-  animation: rotation 2s linear infinite;
-}
-
-@keyframes rotation {
-  from {
-    /* rotate: 0deg; */
-  }
-  50% {
-    scale: 1 1.5;
-  }
-  to {
-    /* rotate: 360deg; */
-  }
-}
-
 .timeline-entry {
   z-index: 2;
   background: hsl(88, 25%, 11%, 0.2);
   backdrop-filter: saturate(180%) blur(40px);
   -webkit-backdrop-filter: saturate(180%) blur(40px);
-}
-
-.card {
-  height: 100%;
-  position: sticky;
-  top: 0;
-  overflow: scroll;
 }
 
 /* toggle */
@@ -280,7 +246,7 @@ html.dark ~ .theme-toggle--button {
   mask-repeat: no-repeat;
   mask-size: 40px;
   min-height: 4123.38px;
-  /* pointer-events: none; */
+  pointer-events: none;
 }
 
 html.dark .text-dark {
@@ -329,7 +295,6 @@ html.dark .spotLight {
 }
 
 .parallax {
-  max-width: 100%;
   overflow: hidden;
   letter-spacing: -2px;
   line-height: 0.8;
@@ -357,4 +322,17 @@ html.dark .spotLight {
 
 .mask .parallax span {
   @apply text-gray dark:text-tertiary;
+}
+
+.animate-before::before {
+  animation: beforeWidth 1s ease-in-out 2s forwards;
+}
+
+@keyframes beforeWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 150px;
+  }
 }

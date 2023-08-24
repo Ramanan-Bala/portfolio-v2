@@ -88,7 +88,7 @@ export const Navbar = () => {
             </ul>
             <MagneticEffect>
               <button
-                className="theme-toggle--button z-10"
+                className="theme-toggle--button"
                 aria-label="Toggle Theme"
                 onClick={changeTheme}
               >
