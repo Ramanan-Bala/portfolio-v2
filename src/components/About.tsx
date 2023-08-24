@@ -42,7 +42,7 @@ const AboutSection = () => {
         </Reveal>
       </div>
       <Reveal>
-        <p className="mt-4 max-w-3xl text-[17px] leading-7 text-slate-600 dark:text-secondary">
+        <p className="mt-4 max-w-3xl text-[20px] leading-9 text-slate-600 dark:text-secondary">
           I create successful restful api that are fast, easy to use, and built
           with best practices. I have experience in creating api using libraries
           like Spring-Boot, Node ExpressJS, Sequelize, Mongoose and Django.

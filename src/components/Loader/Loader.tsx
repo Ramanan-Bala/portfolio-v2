@@ -28,6 +28,7 @@ export const InitialLoader = () => {
       transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 },
     },
   };
+
   return (
     <motion.div
       variants={slideUp}
@@ -38,7 +39,13 @@ export const InitialLoader = () => {
     >
       {dimension.width > 0 && (
         <>
-          <div className="relative z-10">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="relative z-10"
+          >
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
               <Counter from={0} to={100} />
             </div>
@@ -67,6 +74,24 @@ export const InitialLoader = () => {
                 </text>
               </g>
             </svg>
+          </motion.div>
+          <div className="absolute bottom-10 left-10 z-10">
+            <motion.h1
+              exit={{ y: -1000 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="name animate-sliderightT4"
+              style={{ fontFamily: "March Evoked" }}
+            >
+              Ramanan
+            </motion.h1>
+            <motion.h1
+              exit={{ y: -1000 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="name animate-sliderightT3"
+              style={{ fontFamily: "March Evoked" }}
+            >
+              Balamurugan
+            </motion.h1>
           </div>
           <svg className="curve">
             <motion.path

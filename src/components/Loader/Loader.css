@@ -16,6 +16,10 @@
       @apply fill-[#141516] dark:fill-slate-300;
     }
   }
+  .name {
+    @apply mt-2 mt-2 cursor-pointer cursor-pointer text-[35px] text-[35px] font-bold font-bold text-white text-white transition-all transition-all
+duration-300 duration-300 dark:text-slate-800 dark:text-slate-800 xs:text-[40px] xs:text-[40px] sm:text-[50px] sm:text-[50px] lg:text-[70px] lg:text-[70px] lg:leading-[88px] lg:leading-[88px];
+  }
   /* p {
     display: flex;
     color: white;

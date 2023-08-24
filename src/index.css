@@ -1,4 +1,4 @@
-@import url("./assets/font 2/stylesheet.css");
+@import url("./assets/font/stylesheet.css");
 
 @tailwind base;
 @tailwind components;
@@ -118,6 +118,13 @@ body {
   background: hsl(88, 25%, 11%, 0.2);
   backdrop-filter: saturate(180%) blur(40px);
   -webkit-backdrop-filter: saturate(180%) blur(40px);
+}
+
+.card {
+  height: 100%;
+  position: sticky;
+  top: 0;
+  overflow: scroll;
 }
 
 /* toggle */
@@ -246,7 +253,7 @@ html.dark ~ .theme-toggle--button {
   mask-repeat: no-repeat;
   mask-size: 40px;
   min-height: 4123.38px;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 html.dark .text-dark {
@@ -292,6 +299,7 @@ html.dark .spotLight {
   transform: translate(-50%, -50%);
   width: 700px;
   height: 700px;
+  pointer-events: none;
 }
 
 .parallax {

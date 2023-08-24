@@ -11,5 +11,5 @@ export const styles = {
   sectionHeadText:
     "dark:text-white text-slate-800 font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] transition-all duration-300 cursor-pointer",
   sectionSubText:
-    "sm:text-[18px] text-[14px] dark:text-white-100 text-slate-800 uppercase tracking-wider transition-all duration-300 cursor-pointer",
+    "relative cursor-pointer pl-5 text-[14px] uppercase tracking-wider text-slate-800 transition-all duration-300 before:absolute before:left-0 before:top-1/2 before:h-0.5 before:w-3 before:bg-slate-500 dark:text-white-100 sm:text-[18px]",
 };

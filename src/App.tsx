@@ -2,6 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import {
   About,
   Contact,
+  Cursor,
   Experience,
   Hero,
   InitialLoader,
@@ -14,14 +15,14 @@ import { useEffect, useState } from "react";
 import "./stars.css";
 import { SmoothScroll } from "./hoc";
 import { debounce } from "./utils/debounce";
-import { Mask } from "./Mask";
+// import { Mask } from "./Mask";
 import { AnimatePresence } from "framer-motion";
 
 export const App = () => {
   const theme = localStorage.getItem("theme");
 
   const [isLoading, setLoading] = useState(true);
-  const [isFull] = useState(false);
+  // const [isFull, setFull] = useState(false);
 
   useEffect(() => {
     if (theme === null) {
@@ -80,6 +81,9 @@ export const App = () => {
           />
         </button>
       </div> */}
+      <div>
+        <Cursor />
+      </div>
       <AnimatePresence mode="wait">
         {isLoading && <InitialLoader />}
       </AnimatePresence>
@@ -91,9 +95,7 @@ export const App = () => {
             </div>
             <Social />
             <SmoothScroll>
-              <div className="card z-[-1] ">
-                <Hero />
-              </div>
+              <Hero />
               <div className="overflow-hidden bg-slate-100 transition-all duration-300 dark:bg-primary">
                 <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat py-12">
                   <About />
@@ -106,7 +108,7 @@ export const App = () => {
                   <Contact />
                 </div>
               </div>
-              <Mask isFull={isFull} />
+              {/* <Mask isFull={isFull} /> */}
             </SmoothScroll>
           </>
         )}

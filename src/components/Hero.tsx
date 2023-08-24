@@ -12,7 +12,7 @@ export const Hero = () => {
         <div className="flex flex-col justify-start gap-[100px] lg:flex-row lg:items-end lg:gap-[120px]">
           <div className="flex flex-col gap-[50px] lg:gap-[120px]">
             <div
-              className={`${styles.heroHeadText} animate-before relative pb-5 before:absolute before:bottom-0 before:h-3 before:bg-[#915eff]`}
+              className={`${styles.heroHeadText} animate-before relative cursor-pointer pb-5 before:absolute before:bottom-0 before:h-3 before:bg-[#915eff]`}
             >
               <WavyText text="Ramanan" delay={1} />
               <div className="flex">
@@ -130,9 +130,11 @@ export const Hero = () => {
               </div>
             </motion.div>
           </div>
-          <div className="relative flex flex-col">
+          <div className="relative flex cursor-pointer flex-col">
             <div className="spotLight hidden lg:block"></div>
-            <h5 className="animation-delay-500 relative animate-slideleft pl-5 text-[15px] text-slate-500 transition-all duration-300 before:absolute before:left-0 before:top-1/2 before:h-0.5 before:w-3 before:bg-slate-500 dark:text-secondary lg:text-[20px] lg:before:w-4">
+            <h5
+              className={`${styles.sectionSubText} animation-delay-500 animate-slideleft`}
+            >
               Introduction
             </h5>
 
@@ -140,7 +142,7 @@ export const Hero = () => {
               UI/UX Designer <br /> and Full-Stack Developer
             </h3>
 
-            <p className="animation-delay-500 mt-2 animate-slideleftT3 !leading-[35px] text-slate-500 transition-all duration-300 dark:text-secondary lg:text-[20px]">
+            <p className="animation-delay-500 mt-2 animate-slideleftT3 !leading-9 text-slate-500 transition-all duration-300 dark:text-secondary lg:text-[20px]">
               Hello! My name is Ramanan and I enjoy creating things that live on
               the internet. My interest in web development started back in 2019
               when I decided to see what my dad is doing — turns out hacking
@@ -206,6 +208,7 @@ export const Hero = () => {
           >
             <motion.button
               whileHover={{ x: -4, y: -4 }}
+              transition={{ delay: -0.6 }}
               className="rounded border-2 border-[#915eff] bg-slate-100 p-3 px-6 text-lg font-medium tracking-wider text-[#915eff] transition-all duration-300 dark:bg-tertiary"
             >
               Check out my Blogs

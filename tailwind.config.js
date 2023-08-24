@@ -29,6 +29,10 @@ export default {
         slideleftT2: "slideleft 1.2s ease-in-out",
         slideleftT3: "slideleft 1.3s ease-in-out",
         slideleftT4: "slideleft 1.6s ease-in-out",
+        slideright: "slideright 1s ease-in-out",
+        sliderightT2: "slideright 1.2s ease-in-out",
+        sliderightT3: "slideright 1.3s ease-in-out",
+        sliderightT4: "slideright 1.6s ease-in-out",
         slidebottom: "slidebottom 1s ease-in-out",
         slidebottomT2: "slidebottom 1.2s ease-in-out",
         slidebottomT3: "slidebottom 1.3s ease-in-out",
@@ -38,6 +42,11 @@ export default {
         slideleft: {
           from: { opacity: 0, transform: "translateX(500px)" },
           "75%": { transform: "translateX(-10px)" },
+          to: { opacity: 1, transform: "translateX(0)" },
+        },
+        slideright: {
+          from: { opacity: 0, transform: "translateX(-500px)" },
+          "75%": { transform: "translateX(10px)" },
           to: { opacity: 1, transform: "translateX(0)" },
         },
         slidebottom: {

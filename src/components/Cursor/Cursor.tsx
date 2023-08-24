@@ -61,7 +61,7 @@ export const Cursor = () => {
           ></motion.div> */}
           <motion.div
             animate={cursorStyle}
-            className="border-2 border-[#915eff] bg-[#915eff]"
+            className="pointer-events-none border-2 border-[#915eff] bg-[#915eff]"
             variants={{
               auto: {
                 opacity: 1,
