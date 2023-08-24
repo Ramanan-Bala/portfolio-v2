@@ -256,6 +256,29 @@ html.dark ~ .theme-toggle--button {
   /* pointer-events: none; */
 }
 
+.loader-mask {
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 50;
+  background: #915eff;
+  -webkit-mask-image: url("./assets/mask.svg");
+  mask-image: url("./assets/mask.svg");
+  -webkit-mask-origin: content-box;
+  mask-origin: content-box;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-size: 0px;
+  mask-position: 50% 50%;
+  animation: scaleLoader 4s ease-in-out 1s forwards;
+}
+
+@keyframes scaleLoader {
+  100% {
+    mask-size: 120%;
+  }
+}
+
 html.dark .text-dark {
   color: black !important;
 }

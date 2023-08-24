@@ -35,10 +35,26 @@ export const InitialLoader = () => {
       animate="enter"
       initial="initial"
       exit="exit"
-      className="introduction flex h-screen flex-col items-center justify-center"
+      className="introduction relative flex h-screen flex-col items-center justify-center"
     >
       {dimension.width > 0 && (
         <>
+          <div className="absolute right-10 top-10 z-10">
+            <motion.h1
+              exit={{ y: -500 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="name animate-slideleftT3"
+              style={{ fontFamily: "March Evoked" }}
+            >
+              UI/UX
+            </motion.h1>
+            <h1
+              className="name animate-slideleftT4"
+              style={{ fontFamily: "March Evoked" }}
+            >
+              Designer
+            </h1>
+          </div>
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -66,7 +82,10 @@ export const InitialLoader = () => {
               />
               <g>
                 <use xlinkHref="#circlePath" />
-                <text className="fill-gray dark:fill-black" fontSize="22px">
+                <text
+                  className="fill-slate-300 dark:fill-black"
+                  fontSize="22px"
+                >
                   <textPath xlinkHref="#circlePath">
                     Loading • Loading • Loading • Loading • Loading • Loading •
                     Loading • Loading • Loading •
@@ -77,7 +96,7 @@ export const InitialLoader = () => {
           </motion.div>
           <div className="absolute bottom-10 left-10 z-10">
             <motion.h1
-              exit={{ y: -1000 }}
+              exit={{ y: -500 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="name animate-sliderightT4"
               style={{ fontFamily: "March Evoked" }}
@@ -85,7 +104,7 @@ export const InitialLoader = () => {
               Ramanan
             </motion.h1>
             <motion.h1
-              exit={{ y: -1000 }}
+              exit={{ y: -500 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="name animate-sliderightT3"
               style={{ fontFamily: "March Evoked" }}
@@ -126,6 +145,9 @@ const Counter = ({ from, to }) => {
   }, [from, to]);
 
   return (
-    <p ref={nodeRef} className="text-2xl font-bold text-gray dark:text-black" />
+    <p
+      ref={nodeRef}
+      className="text-2xl font-bold text-slate-300 dark:text-black"
+    />
   );
 };
