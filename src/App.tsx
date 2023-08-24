@@ -21,7 +21,7 @@ export const App = () => {
   const theme = localStorage.getItem("theme");
 
   const [isLoading, setLoading] = useState(true);
-  const [isFull, setFull] = useState(false);
+  const [isFull] = useState(false);
 
   useEffect(() => {
     if (theme === null) {
