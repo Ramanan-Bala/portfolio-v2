@@ -6,10 +6,10 @@ import { useState } from "react";
 import { MagneticEffect, WavyText } from "./hoc";
 // import { Text } from "./components/InfiniteText";
 
-export const Mask = ({ isFull }: { isFull: boolean }) => {
+export const Mask = () => {
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
-  const size = isFull ? 10000 : isHovered ? 400 : 40;
+  const size = isHovered ? 400 : 40;
 
   return (
     <motion.div
@@ -22,7 +22,7 @@ export const Mask = ({ isFull }: { isFull: boolean }) => {
       }}
       transition={{ type: "tween", ease: "backOut", duration: 0.3 }}
     >
-      <div className="relative min-h-screen">
+      <div className="relative min-h-screen" id="hero">
         <div
           className={`${styles.paddingX} mx-auto flex max-w-7xl flex-col items-start gap-[80px] pt-[120px]`}
         >
@@ -144,20 +144,20 @@ export const Mask = ({ isFull }: { isFull: boolean }) => {
                 setIsHovered(false);
               }}
             >
-              <h5 className="text-dark relative pl-5 text-[15px] text-secondary before:absolute before:left-0 before:top-1/2 before:h-0.5 before:w-3 before:bg-gray dark:before:bg-black lg:text-[20px] lg:before:w-4">
+              <h5
+                className={`${styles.sectionSubText} animation-delay-500 text-dark animate-slideleft before:bg-white dark:before:bg-black`}
+              >
                 Introduction
               </h5>
-              <h3 className="text-dark mt-2 text-[25px] font-bold text-gray lg:text-[40px]">
-                UI/UX Designer <br /> and Full-Stack Developer
+              <h3 className="text-dark animation-delay-500 mt-2 animate-slideleftT2 text-[25px] font-bold text-slate-800 transition-all duration-300 dark:text-gray lg:text-[40px]">
+                UI/UX Mastermind <br /> and Code Crafting Guru
               </h3>
-              <p
-                className={`text-dark mt-2 !leading-[35px] !text-secondary lg:text-[20px]`}
-              >
-                Hello! My name is Ramanan and I enjoy creating things that live
-                on the internet. My interest in web development started back in
-                2019 when I decided to see what my dad is doing — turns out
-                hacking together a custom html components taught me a lot about
-                HTML & CSS!
+              <p className="text-dark animation-delay-500 mt-2 animate-slideleftT3 !leading-9 text-slate-500 transition-all duration-300 dark:text-secondary lg:text-[20px]">
+                Hey there! I'm Ramanan, and I have a knack for making internet
+                magic happen. My journey into web development kicked off in 2019
+                when I peeked over my dad's shoulder. As it turns out, cobbling
+                together custom HTML components was more fun and I've been
+                coding up a storm ever since!
               </p>
             </div>
           </div>
@@ -240,7 +240,7 @@ export const Mask = ({ isFull }: { isFull: boolean }) => {
           </h2>
         </div>
         <p
-          className="text-dark mt-4 h-[120px] max-w-3xl text-[17px] leading-7"
+          className="text-dark mt-4 h-[120px] max-w-3xl text-[20px] leading-9"
           onMouseEnter={() => {
             setIsHovered(true);
           }}

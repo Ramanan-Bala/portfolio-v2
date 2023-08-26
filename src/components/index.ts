@@ -1,3 +1,4 @@
+import { Box } from "./Box";
 import { NavLink } from "./NavLink";
 import { Social } from "./Social/Social";
 import { Earth } from "./canvas";
@@ -28,4 +29,5 @@ export {
   Blob,
   Social,
   Curve,
+  Box,
 };

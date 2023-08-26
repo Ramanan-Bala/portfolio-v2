@@ -5,8 +5,23 @@
 @tailwind utilities;
 
 @layer utilities {
-  .animation-delay-75 {
-    animation-delay: 75ms;
+  .animation-delay-50 {
+    animation-delay: 50ms;
+  }
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-150 {
+    animation-delay: 150ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-250 {
+    animation-delay: 250ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
   }
   .animation-delay-500 {
     animation-delay: 500ms;
@@ -99,7 +114,15 @@ body {
 }
 
 .dot {
+  @apply animate-pulse;
   color: #915eff;
+  animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  100% {
+    opacity: 0;
+  }
 }
 
 .vertical-timeline-element-content {
@@ -251,32 +274,9 @@ html.dark ~ .theme-toggle--button {
   mask-origin: content-box;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  mask-size: 40px;
+  mask-size: 400px;
   min-height: 4123.38px;
   /* pointer-events: none; */
-}
-
-.loader-mask {
-  left: 0;
-  position: absolute;
-  top: 0;
-  z-index: 50;
-  background: #915eff;
-  -webkit-mask-image: url("./assets/mask.svg");
-  mask-image: url("./assets/mask.svg");
-  -webkit-mask-origin: content-box;
-  mask-origin: content-box;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  mask-size: 0px;
-  mask-position: 50% 50%;
-  animation: scaleLoader 4s ease-in-out 1s forwards;
-}
-
-@keyframes scaleLoader {
-  100% {
-    mask-size: 120%;
-  }
 }
 
 html.dark .text-dark {
@@ -309,7 +309,7 @@ html.dark .mask .hero-social div a svg path {
 
 html.dark .spotLight {
   background: radial-gradient(
-    44.91% 82.4% at 50% 17.6%,
+    50% 80% at 50% 20%,
     rgba(145, 94, 255, 0.42) 0%,
     rgba(145, 94, 255, 0) 100%
   );
@@ -366,4 +366,127 @@ html.dark .spotLight {
   to {
     width: 150px;
   }
+}
+
+@keyframes rotateIn {
+  from {
+    left: 100vw;
+  }
+  to {
+    opacity: 0.5;
+    rotate: -180deg;
+  }
+}
+
+.box {
+  position: relative;
+  filter: blur(1px);
+}
+.box div {
+  position: absolute;
+  height: 30vw;
+  aspect-ratio: 1;
+  border: 1px solid #915eff;
+  animation: rotateIn 5s linear forwards;
+  opacity: 0;
+  transition: transform 1s ease-in-out;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.box div:nth-child(1) {
+  top: 320px;
+  left: 49.5%;
+  animation-delay: 1.04s;
+  transition-delay: 0.05s;
+}
+.box div:nth-child(2) {
+  top: 300px;
+  left: 51%;
+  animation-delay: 0.975s;
+  transition-delay: 0.1s;
+}
+.box div:nth-child(3) {
+  top: 280px;
+  left: 52.5%;
+  animation-delay: 0.91s;
+  transition-delay: 0.15s;
+}
+.box div:nth-child(4) {
+  top: 260px;
+  left: 54%;
+  animation-delay: 0.845s;
+  transition-delay: 0.2s;
+}
+.box div:nth-child(5) {
+  top: 240px;
+  left: 55.5%;
+  animation-delay: 0.78s;
+  transition-delay: 0.25s;
+}
+.box div:nth-child(6) {
+  top: 220px;
+  left: 57%;
+  animation-delay: 0.715s;
+  transition-delay: 0.3s;
+}
+.box div:nth-child(7) {
+  top: 200px;
+  left: 58.5%;
+  animation-delay: 0.65s;
+  transition-delay: 0.35s;
+}
+.box div:nth-child(8) {
+  top: 180px;
+  left: 60%;
+  animation-delay: 0.585s;
+  transition-delay: 0.4s;
+}
+.box div:nth-child(9) {
+  top: 160px;
+  left: 61.5%;
+  animation-delay: 0.52s;
+  transition-delay: 0.45s;
+}
+.box div:nth-child(10) {
+  top: 140px;
+  left: 63%;
+  animation-delay: 0.455s;
+  transition-delay: 0.5s;
+}
+.box div:nth-child(11) {
+  top: 120px;
+  left: 64.5%;
+  animation-delay: 0.39s;
+  transition-delay: 0.55s;
+}
+.box div:nth-child(12) {
+  top: 100px;
+  left: 66%;
+  animation-delay: 0.325s;
+  transition-delay: 0.6s;
+}
+.box div:nth-child(13) {
+  top: 80px;
+  left: 67.5%;
+  animation-delay: 0.26s;
+  transition-delay: 0.65s;
+}
+.box div:nth-child(14) {
+  top: 60px;
+  left: 69%;
+  animation-delay: 0.195s;
+  transition-delay: 0.7s;
+}
+.box div:nth-child(15) {
+  top: 40px;
+  left: 70.5%;
+  animation-delay: 0.13s;
+  transition-delay: 0.75s;
+}
+.box div:nth-child(16) {
+  top: 20px;
+  left: 72%;
+  animation-delay: 0.065s;
+  transition-delay: 0.8s;
 }

@@ -35,7 +35,7 @@ export const InitialLoader = () => {
       animate="enter"
       initial="initial"
       exit="exit"
-      className="introduction relative flex h-screen flex-col items-center justify-center"
+      className="introduction relative z-[-1] flex h-screen flex-col items-center justify-center"
     >
       {dimension.width > 0 && (
         <>
@@ -62,7 +62,7 @@ export const InitialLoader = () => {
             transition={{ duration: 1, ease: "easeInOut" }}
             className="relative z-10"
           >
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-slate-300 dark:text-slate-800">
               <Counter from={0} to={100} />
             </div>
             <svg
@@ -83,7 +83,7 @@ export const InitialLoader = () => {
               <g>
                 <use xlinkHref="#circlePath" />
                 <text
-                  className="fill-slate-300 dark:fill-black"
+                  className="textPath fill-slate-300 dark:fill-black"
                   fontSize="22px"
                 >
                   <textPath xlinkHref="#circlePath">
@@ -135,7 +135,8 @@ const Counter = ({ from, to }) => {
     const node: any = nodeRef.current;
 
     const controls = animate(from, to, {
-      duration: 3,
+      delay: 1,
+      duration: 2,
       onUpdate(value) {
         node.textContent = value.toFixed(0) + "%";
       },
@@ -144,10 +145,5 @@ const Counter = ({ from, to }) => {
     return () => controls.stop();
   }, [from, to]);
 
-  return (
-    <p
-      ref={nodeRef}
-      className="text-2xl font-bold text-slate-300 dark:text-black"
-    />
-  );
+  return <p ref={nodeRef} className="text-2xl font-bold " />;
 };

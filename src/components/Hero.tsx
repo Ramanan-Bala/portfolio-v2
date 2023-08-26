@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { MagneticEffect, WavyText } from "../hoc";
+import { Box } from ".";
 // import { Text } from "./InfiniteText";
 
 export const Hero = () => {
   return (
     <div className="relative mx-auto min-h-screen w-full bg-gradient-to-b from-slate-300 via-slate-100 to-transparent dark:from-tertiary dark:via-tertiary">
+      <Box />
       <div
         className={`${styles.paddingX} mx-auto flex max-w-7xl flex-col items-start gap-[80px] pt-[120px]`}
       >
-        <div className="flex flex-col justify-start gap-[100px] lg:flex-row lg:items-end lg:gap-[120px]">
+        <div className="flex flex-col justify-between gap-[100px] lg:flex-row lg:items-end lg:gap-[120px]">
           <div className="flex flex-col gap-[50px] lg:gap-[120px]">
             <div
               className={`${styles.heroHeadText} animate-before relative cursor-pointer pb-5 before:absolute before:bottom-0 before:h-3 before:bg-[#915eff]`}
@@ -130,18 +132,16 @@ export const Hero = () => {
               </div>
             </motion.div>
           </div>
-          <div className="relative flex cursor-pointer flex-col">
+          <div className="relative">
             <div className="spotLight hidden lg:block"></div>
             <h5
               className={`${styles.sectionSubText} animation-delay-500 animate-slideleft`}
             >
               Introduction
             </h5>
-
             <h3 className="animation-delay-500 mt-2 animate-slideleftT2 text-[25px] font-bold text-slate-800 transition-all duration-300 dark:text-gray lg:text-[40px]">
               UI/UX Designer <br /> and Full-Stack Developer
             </h3>
-
             <p className="animation-delay-500 mt-2 animate-slideleftT3 !leading-9 text-slate-500 transition-all duration-300 dark:text-secondary lg:text-[20px]">
               Hello! My name is Ramanan and I enjoy creating things that live on
               the internet. My interest in web development started back in 2019

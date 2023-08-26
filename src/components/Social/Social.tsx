@@ -1,13 +1,30 @@
+import { useEffect, useState } from "react";
 import { MagneticEffect } from "../../hoc";
 import "./Social.css";
 
 import { motion } from "framer-motion";
 
 export const Social = () => {
+  const [isScrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const isTop =
+        window.scrollY < document.documentElement.clientHeight * 0.5;
+      if (isTop !== true) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    });
+
+    return () => {
+      window.removeEventListener("scroll", () => {});
+    };
+  });
   return (
     <div>
       <motion.div
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: isScrolled ? 0 : 300 }}
         initial={{ opacity: 0, y: 100 }}
         transition={{ duration: 0.4, delay: 0.5 }}
         className="float social"
@@ -118,7 +135,7 @@ export const Social = () => {
         <div className="line"></div>
       </motion.div>
       <motion.div
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: isScrolled ? 0 : 300 }}
         initial={{ opacity: 0, y: 100 }}
         transition={{ duration: 0.4, delay: 0.5 }}
         className="float mail"

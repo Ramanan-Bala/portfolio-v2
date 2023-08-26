@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import {
   About,
   Contact,
-  Cursor,
+  // Cursor,
   Experience,
   Hero,
   InitialLoader,
@@ -17,12 +17,12 @@ import { SmoothScroll } from "./hoc";
 import { debounce } from "./utils/debounce";
 // import { Mask } from "./Mask";
 import { AnimatePresence } from "framer-motion";
+import { Mask } from "./Mask";
 
 export const App = () => {
   const theme = localStorage.getItem("theme");
 
   const [isLoading, setLoading] = useState(true);
-  // const [isFull, setFull] = useState(false);
 
   useEffect(() => {
     if (theme === null) {
@@ -40,7 +40,7 @@ export const App = () => {
 
     setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 3000);
 
     debounce(
       window.addEventListener("hashchange", (e) => {
@@ -81,9 +81,9 @@ export const App = () => {
           />
         </button>
       </div> */}
-      <div>
+      {/* <div>
         <Cursor />
-      </div>
+      </div> */}
       <AnimatePresence mode="wait">
         {isLoading && <InitialLoader />}
       </AnimatePresence>
@@ -108,7 +108,7 @@ export const App = () => {
                   <Contact />
                 </div>
               </div>
-              {/* <Mask isFull={isFull} /> */}
+              <Mask />
             </SmoothScroll>
           </>
         )}
