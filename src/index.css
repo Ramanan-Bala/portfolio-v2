@@ -389,104 +389,87 @@ html.dark .spotLight {
   border: 1px solid #915eff;
   animation: rotateIn 5s linear forwards;
   opacity: 0;
-  transition: transform 1s ease-in-out;
+  transition: transform 1s cubic-bezier(0.65, 1, 0.35, 1);
   will-change: transform;
   transform-style: preserve-3d;
 }
-
 .box div:nth-child(1) {
   top: 320px;
   left: 49.5%;
   animation-delay: 1.04s;
-  transition-delay: 0.05s;
 }
 .box div:nth-child(2) {
   top: 300px;
   left: 51%;
   animation-delay: 0.975s;
-  transition-delay: 0.1s;
 }
 .box div:nth-child(3) {
   top: 280px;
   left: 52.5%;
   animation-delay: 0.91s;
-  transition-delay: 0.15s;
 }
 .box div:nth-child(4) {
   top: 260px;
   left: 54%;
   animation-delay: 0.845s;
-  transition-delay: 0.2s;
 }
 .box div:nth-child(5) {
   top: 240px;
   left: 55.5%;
   animation-delay: 0.78s;
-  transition-delay: 0.25s;
 }
 .box div:nth-child(6) {
   top: 220px;
   left: 57%;
   animation-delay: 0.715s;
-  transition-delay: 0.3s;
 }
 .box div:nth-child(7) {
   top: 200px;
   left: 58.5%;
   animation-delay: 0.65s;
-  transition-delay: 0.35s;
 }
 .box div:nth-child(8) {
   top: 180px;
   left: 60%;
   animation-delay: 0.585s;
-  transition-delay: 0.4s;
 }
 .box div:nth-child(9) {
   top: 160px;
   left: 61.5%;
   animation-delay: 0.52s;
-  transition-delay: 0.45s;
 }
 .box div:nth-child(10) {
   top: 140px;
   left: 63%;
   animation-delay: 0.455s;
-  transition-delay: 0.5s;
 }
 .box div:nth-child(11) {
   top: 120px;
   left: 64.5%;
   animation-delay: 0.39s;
-  transition-delay: 0.55s;
 }
 .box div:nth-child(12) {
   top: 100px;
   left: 66%;
   animation-delay: 0.325s;
-  transition-delay: 0.6s;
 }
 .box div:nth-child(13) {
   top: 80px;
   left: 67.5%;
   animation-delay: 0.26s;
-  transition-delay: 0.65s;
 }
 .box div:nth-child(14) {
   top: 60px;
   left: 69%;
   animation-delay: 0.195s;
-  transition-delay: 0.7s;
 }
 .box div:nth-child(15) {
   top: 40px;
   left: 70.5%;
   animation-delay: 0.13s;
-  transition-delay: 0.75s;
 }
 .box div:nth-child(16) {
   top: 20px;
   left: 72%;
   animation-delay: 0.065s;
-  transition-delay: 0.8s;
 }

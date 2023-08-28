@@ -9,11 +9,13 @@ export const Box = () => {
 
     for (let i = 0; i < boxes.length; i++) {
       boxes[i].style.transform =
-        "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(" +
-        (x / 40 - i * 2) +
+        "translate3d(" +
+        (x / 20 - i * 2) +
+        "px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(" +
+        ((x * i) / 500 - i * 2) +
         "deg) skew(0deg, 0deg)";
     }
-  });
+  }, [x]);
   return (
     <div className="box" id="box">
       <div></div>
