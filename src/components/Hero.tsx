@@ -82,7 +82,11 @@ export const Hero = () => {
               </div>
               <div className="animation-delay-1000 animate-slidebottomT3">
                 <MagneticEffect>
-                  <a href="">
+                  <a
+                    href="https://www.npmjs.com/~ramanan_kb"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"

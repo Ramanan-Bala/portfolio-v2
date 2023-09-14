@@ -12,6 +12,7 @@ import { Contact } from "./Contact";
 import { InitialLoader } from "./Loader/Loader";
 import { Cursor } from "./Cursor/Cursor";
 import { Blob } from "./Cursor/Blob";
+// import { Blob3D } from "./Blob";
 import { Curve } from "./Curve";
 
 export {
@@ -30,4 +31,5 @@ export {
   Social,
   Curve,
   Box,
+  // Blob3D,
 };

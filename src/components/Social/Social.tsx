@@ -49,6 +49,7 @@ export const Social = () => {
             </svg>
           </a>
         </MagneticEffect>
+
         <MagneticEffect>
           <a
             href="https://github.com/Ramanan-Bala?tab=repositories"
@@ -70,6 +71,7 @@ export const Social = () => {
             </svg>
           </a>
         </MagneticEffect>
+
         <MagneticEffect>
           <a
             href="https://www.linkedin.com/in/ramanan-balamurugan-0b4020241/"
@@ -101,6 +103,7 @@ export const Social = () => {
             </svg>
           </a>
         </MagneticEffect>
+
         <MagneticEffect>
           <a
             href="https://www.instagram.com/ramanan_kb/"

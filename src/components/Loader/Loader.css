@@ -5,8 +5,8 @@
   align-items: center;
   justify-content: center;
   position: fixed;
-  z-index: 99;
-  background-color: #141516;
+  /* background-color: #141516; */
+
   .curve {
     position: absolute;
     top: 0;

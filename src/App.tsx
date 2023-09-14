@@ -12,10 +12,11 @@ import {
 import { useEffect, useState } from "react";
 
 // import { pressHand, pressText } from "./assets";
+
+import { motion } from "framer-motion";
 import "./stars.css";
 import { SmoothScroll } from "./hoc";
 import { debounce } from "./utils/debounce";
-// import { Mask } from "./Mask";
 import { AnimatePresence } from "framer-motion";
 import { Mask } from "./Mask";
 
@@ -89,7 +90,11 @@ export const App = () => {
       </AnimatePresence>
       <BrowserRouter>
         {!isLoading && (
-          <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1 }}
+          >
             <div className="fixed top-0 z-10 w-full">
               <Navbar />
             </div>
@@ -110,7 +115,7 @@ export const App = () => {
               </div>
               <Mask />
             </SmoothScroll>
-          </>
+          </motion.div>
         )}
       </BrowserRouter>
     </>

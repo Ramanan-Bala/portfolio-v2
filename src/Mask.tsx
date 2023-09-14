@@ -39,7 +39,11 @@ export const Mask = () => {
               </div>
               <div className="hero-social flex gap-x-[80px]">
                 <MagneticEffect>
-                  <a href="">
+                  <a
+                    href="https://github.com/Ramanan-Bala?tab=repositories"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"
@@ -58,7 +62,11 @@ export const Mask = () => {
                 </MagneticEffect>
 
                 <MagneticEffect>
-                  <a href="">
+                  <a
+                    href="https://www.linkedin.com/in/ramanan-balamurugan-0b4020241/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"
@@ -87,8 +95,13 @@ export const Mask = () => {
                     </svg>
                   </a>
                 </MagneticEffect>
+
                 <MagneticEffect>
-                  <a href="">
+                  <a
+                    href="https://www.npmjs.com/~ramanan_kb"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"
@@ -103,8 +116,13 @@ export const Mask = () => {
                     </svg>
                   </a>
                 </MagneticEffect>
+
                 <MagneticEffect>
-                  <a href="">
+                  <a
+                    href="https://www.instagram.com/ramanan_kb/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"
@@ -199,7 +217,10 @@ export const Mask = () => {
                 </span>
               </a>
             </div>
-            <motion.div
+            <motion.a
+              href="https://dev.to/ramanan_kb"
+              target="_blank"
+              rel="noreferrer"
               className="my-5 max-w-max rounded bg-tertiary"
               onMouseEnter={() => {
                 setIsHovered(true);
@@ -214,18 +235,7 @@ export const Mask = () => {
               >
                 Check out my Blogs
               </motion.button>
-            </motion.div>
-          </div>
-          <div
-            className="w-full"
-            onMouseEnter={() => {
-              setIsHovered(true);
-            }}
-            onMouseLeave={() => {
-              setIsHovered(false);
-            }}
-          >
-            {/* <Text baseVelocity={5}>UI/UX Designer - Full-Stack Developer</Text> */}
+            </motion.a>
           </div>
         </div>
       </div>
