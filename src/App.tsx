@@ -8,6 +8,7 @@ import {
   Hero,
   InitialLoader,
   Navbar,
+  PixelLoader,
   Social,
 } from "./components";
 import { useEffect, useState } from "react";
@@ -17,7 +18,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./stars.css";
 import { SkewScroll, SmoothScroll } from "./hoc";
-import { debounce } from "./utils/debounce";
+import { debounce } from "./utils/functions";
 import { AnimatePresence } from "framer-motion";
 import { Mask } from "./Mask";
 
@@ -87,7 +88,14 @@ export const App = () => {
         <Cursor />
       </div> */}
       <AnimatePresence mode="wait">
-        {isLoading && <InitialLoader />}
+        {isLoading && (
+          <>
+            <div className="absolute z-[-2]">
+              <PixelLoader />
+            </div>
+            <InitialLoader />
+          </>
+        )}
       </AnimatePresence>
       <BrowserRouter>
         {!isLoading && (

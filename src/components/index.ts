@@ -10,6 +10,7 @@ import { Experience } from "./Experience";
 
 import { Contact } from "./Contact";
 import { InitialLoader } from "./Loader/Loader";
+import { PixelLoader } from "./Loader/pixelLoader";
 import { Cursor } from "./Cursor/Cursor";
 import { Blob } from "./Cursor/Blob";
 import { Curve } from "./Curve";
@@ -23,6 +24,7 @@ export {
   Contact,
   Earth,
   InitialLoader,
+  PixelLoader,
   Cursor,
   Blob,
   Social,

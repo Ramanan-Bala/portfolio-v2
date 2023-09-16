@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { cubicBezier, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import "./Loader.css";
 export const InitialLoader = () => {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
@@ -9,8 +9,8 @@ export const InitialLoader = () => {
   }, []);
 
   return (
-    <motion.div className="introduction relative z-[-1] flex h-screen flex-col items-center justify-center">
-      <motion.div
+    <motion.div className="introduction relative flex h-screen flex-col items-center justify-center bg-transparent">
+      {/* <motion.div
         initial={{ y: "-100vh" }}
         animate={{
           y: "0vh",
@@ -33,7 +33,7 @@ export const InitialLoader = () => {
           ease: cubicBezier(0.6, -0.05, 0.25, 0.96),
         }}
         className="absolute right-0 h-screen w-[50vw] bg-[#141516] dark:bg-slate-100"
-      ></motion.div>
+      ></motion.div> */}
       {dimension.width > 0 && (
         <>
           <motion.div

@@ -249,7 +249,7 @@ export const Mask = () => {
                   type: "tween",
                   delay: 0.6,
                 }}
-                className="my-5 max-w-max rounded bg-[#915eff]"
+                className="my-5 max-w-max rounded bg-tertiary"
               >
                 <motion.button
                   whileHover={{ x: -4, y: -4 }}

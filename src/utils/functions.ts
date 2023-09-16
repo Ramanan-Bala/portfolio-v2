@@ -7,3 +7,7 @@ export function debounce(func: any, timeout = 300) {
     }, timeout);
   };
 }
+
+export function random(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}

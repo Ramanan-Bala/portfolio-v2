@@ -475,3 +475,28 @@ html.dark .spotLight {
   left: 72%;
   animation-delay: 0.065s;
 }
+
+::root {
+  --bg: rgb(41, 41, 41);
+}
+
+html.dark ::root {
+  --bg: rgb(241 245 249);
+}
+
+.overlay {
+  /* grid-area: 1 / 1 / -1 / -1; */
+  display: grid;
+  position: relative;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  --columns: 20;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  height: 100vh;
+  width: 100vw;
+}
+
+.overlay div {
+  @apply bg-[#141516] dark:bg-slate-300;
+}
