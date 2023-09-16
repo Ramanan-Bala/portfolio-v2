@@ -26,7 +26,7 @@ const BlogsSection = () => {
           Blogs<span className="dot">.</span>
         </h2>
       </Reveal>
-      <div className="mt-10 grid grid-cols-2 gap-5">
+      <div className="mt-10 grid gap-5 lg:grid-cols-2">
         {!isLoading &&
           blogs.map((blog) => {
             return <Blog key={blog.id} blog={blog} />;
