@@ -1,3 +1,4 @@
+import { Blogs } from "./Blogs";
 import { Box } from "./Box";
 import { NavLink } from "./NavLink";
 import { Social } from "./Social/Social";
@@ -6,13 +7,11 @@ import { Hero } from "./Hero";
 import { Navbar } from "./Navbar";
 import { About } from "./About";
 import { Experience } from "./Experience";
-import { Works } from "./Works";
-import { Feedbacks } from "./Feedbacks";
+
 import { Contact } from "./Contact";
 import { InitialLoader } from "./Loader/Loader";
 import { Cursor } from "./Cursor/Cursor";
 import { Blob } from "./Cursor/Blob";
-// import { Blob3D } from "./Blob";
 import { Curve } from "./Curve";
 
 export {
@@ -21,8 +20,6 @@ export {
   NavLink,
   About,
   Experience,
-  Works,
-  Feedbacks,
   Contact,
   Earth,
   InitialLoader,
@@ -31,5 +28,5 @@ export {
   Social,
   Curve,
   Box,
-  // Blob3D,
+  Blogs,
 };

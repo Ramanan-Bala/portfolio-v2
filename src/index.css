@@ -275,7 +275,7 @@ html.dark ~ .theme-toggle--button {
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   mask-size: 400px;
-  min-height: 4123.38px;
+  /* min-height: 4123.38px; */
   /* pointer-events: none; */
 }
 
@@ -333,12 +333,14 @@ html.dark .spotLight {
   white-space: nowrap;
   display: flex;
   flex-wrap: nowrap;
+  transform: skewY(-5deg);
 }
 
 .parallax .scroller {
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  font-size: 64px;
+  font-size: 48px;
+  letter-spacing: 2.4px;
   display: flex;
   white-space: nowrap;
   display: flex;

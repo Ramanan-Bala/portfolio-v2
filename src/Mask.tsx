@@ -4,6 +4,7 @@ import { styles } from "./styles";
 import { useMousePosition } from "./utils/useMousePosition";
 import { useState } from "react";
 import { MagneticEffect, WavyText } from "./hoc";
+import { Text } from "./components/InfiniteText";
 // import { Text } from "./components/InfiniteText";
 
 export const Mask = () => {
@@ -217,11 +218,8 @@ export const Mask = () => {
                 </span>
               </a>
             </div>
-            <motion.a
-              href="https://dev.to/ramanan_kb"
-              target="_blank"
-              rel="noreferrer"
-              className="my-5 max-w-max rounded bg-tertiary"
+            <div
+              className="flex gap-4"
               onMouseEnter={() => {
                 setIsHovered(true);
               }}
@@ -229,13 +227,39 @@ export const Mask = () => {
                 setIsHovered(false);
               }}
             >
-              <motion.button
-                whileHover={{ x: -4, y: -4 }}
-                className="rounded border-2 border-[#915eff] bg-slate-100 p-3 px-6 text-lg font-medium tracking-wider text-[#915eff] dark:bg-tertiary"
+              <motion.a
+                href="https://dev.to/ramanan_kb"
+                target="_blank"
+                rel="noreferrer"
+                className="my-5 max-w-max rounded bg-tertiary"
               >
-                Check out my Blogs
-              </motion.button>
-            </motion.a>
+                <motion.button
+                  whileHover={{ x: -4, y: -4 }}
+                  className="rounded border-2 border-[#915eff] bg-slate-100 p-3 px-6 text-lg font-medium tracking-wider text-[#915eff] dark:bg-tertiary"
+                >
+                  Check out my Blogs
+                </motion.button>
+              </motion.a>
+              <motion.a
+                href="/RamananResume.pdf"
+                download="Ramanan-Resume"
+                initial={{ y: 70 }}
+                animate={{ y: 0 }}
+                transition={{
+                  type: "tween",
+                  delay: 0.6,
+                }}
+                className="my-5 max-w-max rounded bg-[#915eff]"
+              >
+                <motion.button
+                  whileHover={{ x: -4, y: -4 }}
+                  transition={{ delay: -0.6 }}
+                  className="rounded border-2 border-[#915eff] bg-slate-100 p-3 px-6 text-lg font-medium tracking-wider text-[#915eff] transition-all duration-300 dark:bg-tertiary"
+                >
+                  Download my Resume
+                </motion.button>
+              </motion.a>
+            </div>
           </div>
         </div>
       </div>
@@ -263,8 +287,33 @@ export const Mask = () => {
           front-end development, HTML, CSS, JS, experienced in developing
           real-time applications, animations, and coding interactive layouts.
         </p>
+        <div
+          className="mt-16 flex max-w-fit flex-wrap gap-10"
+          onMouseEnter={() => {
+            setIsHovered(true);
+          }}
+          onMouseLeave={() => {
+            setIsHovered(false);
+          }}
+        >
+          <Text baseVelocity={1.5} direction={1}>
+            HTML * CSS * JavaScript * TypeScript * S(a|c)ss *
+          </Text>
+          <Text baseVelocity={1.8} direction={-1}>
+            TailwindCSS * NgZorro * Framer Motion * Three.js *
+          </Text>
+          <Text baseVelocity={2.2} direction={1}>
+            Angular * React * Vue * NextJS *
+          </Text>
+          <Text baseVelocity={2} direction={-1}>
+            Node.js * Express.js * Sequelize * Mongoose *
+          </Text>
+          <Text baseVelocity={3} direction={1}>
+            Figma * Spline * Framer *
+          </Text>
+        </div>
       </div>
-      <div
+      {/* <div
         className={`${styles.padding} relative z-0 mx-auto mt-12 min-h-screen max-w-7xl`}
       >
         <p className={`${styles.sectionSubText} text-dark`}>
@@ -281,7 +330,7 @@ export const Mask = () => {
         >
           Work Experience<span className="text-white">.</span>
         </h2>
-      </div>
+      </div> */}
     </motion.div>
   );
 };

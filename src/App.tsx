@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import {
   About,
+  Blogs,
   Contact,
   // Cursor,
   Experience,
@@ -15,7 +16,7 @@ import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 import "./stars.css";
-import { SmoothScroll } from "./hoc";
+import { SkewScroll, SmoothScroll } from "./hoc";
 import { debounce } from "./utils/debounce";
 import { AnimatePresence } from "framer-motion";
 import { Mask } from "./Mask";
@@ -100,18 +101,21 @@ export const App = () => {
             </div>
             <Social />
             <SmoothScroll>
-              <Hero />
-              <div className="overflow-hidden bg-slate-100 transition-all duration-300 dark:bg-primary">
-                <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat py-12">
-                  <About />
+              <SkewScroll>
+                <Hero />
+                <div className="overflow-hidden bg-slate-100 transition-all duration-300 dark:bg-primary">
+                  <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat py-12">
+                    <About />
+                  </div>
+                  <Experience />
+                  <Blogs />
                 </div>
-                <Experience />
-                <div className=" overflow-hidden">
-                  <div id="stars"></div>
-                  <div id="stars2"></div>
-                  <div id="stars3"></div>
-                  <Contact />
-                </div>
+              </SkewScroll>
+              <div className="overflow-hidden">
+                <div id="stars"></div>
+                <div id="stars2"></div>
+                <div id="stars3"></div>
+                <Contact />
               </div>
               <Mask />
             </SmoothScroll>

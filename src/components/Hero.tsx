@@ -201,23 +201,42 @@ export const Hero = () => {
               </span>
             </a>
           </motion.div>
-          <motion.div
-            initial={{ y: 70 }}
-            animate={{ y: 0 }}
-            transition={{
-              type: "tween",
-              delay: 0.6,
-            }}
-            className="my-5 max-w-max rounded bg-[#915eff]"
-          >
-            <motion.button
-              whileHover={{ x: -4, y: -4 }}
-              transition={{ delay: -0.6 }}
-              className="rounded border-2 border-[#915eff] bg-slate-100 p-3 px-6 text-lg font-medium tracking-wider text-[#915eff] transition-all duration-300 dark:bg-tertiary"
+          <div className="flex gap-4">
+            <motion.div
+              initial={{ y: 70 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "tween",
+                delay: 0.6,
+              }}
+              className="my-5 max-w-max rounded bg-[#915eff]"
             >
-              Check out my Blogs
-            </motion.button>
-          </motion.div>
+              <motion.button
+                whileHover={{ x: -4, y: -4 }}
+                transition={{ delay: -0.6 }}
+                className="rounded border-2 border-[#915eff] bg-slate-100 p-3 px-6 text-lg font-medium tracking-wider text-[#915eff] transition-all duration-300 dark:bg-tertiary"
+              >
+                Check out my Blogs
+              </motion.button>
+            </motion.div>
+            <motion.div
+              initial={{ y: 70 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "tween",
+                delay: 0.6,
+              }}
+              className="my-5 max-w-max rounded bg-[#915eff]"
+            >
+              <motion.button
+                whileHover={{ x: -4, y: -4 }}
+                transition={{ delay: -0.6 }}
+                className="rounded border-2 border-[#915eff] bg-slate-100 p-3 px-6 text-lg font-medium tracking-wider text-[#915eff] transition-all duration-300 dark:bg-tertiary"
+              >
+                Download my Resume
+              </motion.button>
+            </motion.div>
+          </div>
         </div>
         {/* <Text baseVelocity={5}>UI/UX Designer - Full-Stack Developer</Text> */}
       </div>
