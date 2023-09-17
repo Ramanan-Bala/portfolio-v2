@@ -42,7 +42,7 @@ export const InitialLoader = () => {
             animate={{ opacity: 1 }}
             exit={{
               opacity: 0,
-              x: 500,
+              // x: 500,
               transition: { duration: 1, ease: "easeInOut", delay: 0.2 },
             }}
             transition={{
@@ -112,7 +112,7 @@ export const InitialLoader = () => {
             transition={{ duration: 1, delay: 1 }}
             exit={{
               opacity: 0,
-              x: -500,
+              // x: -500,
               transition: { duration: 1, ease: "easeInOut", delay: 0.2 },
             }}
           >

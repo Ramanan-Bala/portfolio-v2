@@ -1,11 +1,14 @@
-import { useLayoutEffect } from "react";
 import { Overlay } from "../../utils/overlay";
 import { random } from "../../utils/functions";
+import { useEffectOnce } from "../../hooks";
 
 export const PixelLoader = () => {
-  useLayoutEffect(() => {
+  useEffectOnce(() => {
+    animate();
+  });
+
+  const animate = () => {
     const overlayEl = document.querySelector(".overlay");
-    console.log(overlayEl);
     const overlay = new Overlay(overlayEl, {
       rows: 10,
       columns: 20,
@@ -26,6 +29,7 @@ export const PixelLoader = () => {
           0.03 * (overlay.cells.flat()[index].row + random(0, 5)),
       });
     }, 3000);
-  });
+  };
+
   return <div className="overlay"></div>;
 };

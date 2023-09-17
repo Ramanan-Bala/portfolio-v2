@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Reveal, SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { motion } from "framer-motion";
+import { useEffectOnce } from "../hooks";
 
 const BlogsSection = () => {
   const [blogs, setBlogs] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
+  useEffectOnce(() => {
     fetch("https://dev.to/api/articles?username=ramanan_kb")
       .then((res) => res.json())
       .then((data) => {
@@ -15,7 +16,7 @@ const BlogsSection = () => {
         setLoading(false);
       })
       .catch((err) => console.log(err));
-  }, []);
+  });
   return (
     <div>
       <Reveal>

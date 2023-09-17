@@ -43,7 +43,7 @@ export const App = () => {
 
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 2800);
 
     debounce(
       window.addEventListener("hashchange", (e) => {

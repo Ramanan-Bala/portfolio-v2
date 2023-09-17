@@ -69,13 +69,6 @@ export class Overlay {
       duration: 0.5,
       // Ease for each cell animation
       ease: "none",
-      // Stagger object
-      stagger: {
-        grid: [this.options.rows, this.options.columns],
-        from: 0,
-        each: 0.05,
-        ease: "none",
-      },
     };
     const config = Object.assign({}, defaultConfig, customConfig);
 
@@ -102,14 +95,6 @@ export class Overlay {
       duration: 0.5,
       // Ease for each cell animation
       ease: "none",
-      // Stagger object
-      stagger: {
-        grid: [this.options.rows, this.options.columns],
-        from: 0,
-        each: 0.05,
-        ease: "none",
-      },
-      delay: 0,
     };
     const config = Object.assign({}, defaultConfig, customConfig);
     const animationConfig = {
@@ -121,7 +106,8 @@ export class Overlay {
     animate(".cell", animationConfig, {
       duration: config.duration,
       ease: config.ease,
-      delay: (index) => 0.03 * (this.cells.flat()[index].row + random(0, 5)),
+      delay: (index, length) =>
+        0.03 * (this.cells.flat()[length - index - 1].row + random(0, 5)),
     });
   }
 }
