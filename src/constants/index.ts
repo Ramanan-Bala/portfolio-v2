@@ -6,6 +6,7 @@ import {
   simplyDoc,
   streetVendors,
   attendance,
+  propel,
 } from "../assets";
 
 export const navLinks = [
@@ -44,11 +45,26 @@ const services = [
 
 const experiences = [
   {
+    title: "Software Developer",
+    company_name: "Propel - Technology Solutions",
+    icon: propel,
+    iconBg: "#ffffff",
+    date: "JAN 2024 - Present",
+    points: [
+      "Developing and maintaining Angular frontend components for various web applications.",
+      "Implementing responsive and user-friendly interfaces using Angular Material design principles.",
+      "Utilizing TypeScript for robust and type-safe code in Angular applications.",
+      "Participating in code reviews to ensure code quality and adherence to best practices.",
+      "Troubleshooting and debugging Angular applications to identify and resolve issues efficiently.",
+      "Staying updated with the latest Angular and .NET technologies to enhance development efficiency and product quality.",
+    ],
+  },
+  {
     title: "Full Stack Developer",
     company_name: "PK Innovatives - Project Intern",
     icon: pk,
     iconBg: "#E6DEDD",
-    date: "JUNE 2023 - Present",
+    date: "JUNE 2023 - MAY 2024",
     points: [
       "Working in an Attendance and Inventory Management project as a Full-stack developer.",
       "Used Angular, NgZorro for Front-end and NodeJs, Express, SQLite for the back-end.",

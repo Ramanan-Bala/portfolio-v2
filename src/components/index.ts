@@ -14,6 +14,7 @@ import { PixelLoader } from "./Loader/pixelLoader";
 import { Cursor } from "./Cursor/Cursor";
 import { Blob } from "./Cursor/Blob";
 import { Curve } from "./Curve";
+import { AuroraBackground } from "./AuroraBackground";
 
 export {
   Hero,
@@ -31,4 +32,5 @@ export {
   Curve,
   Box,
   Blogs,
+  AuroraBackground,
 };

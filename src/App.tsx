@@ -3,7 +3,6 @@ import {
   About,
   Blogs,
   Contact,
-  // Cursor,
   Experience,
   Hero,
   InitialLoader,
@@ -13,11 +12,9 @@ import {
 } from "./components";
 import { useEffect, useState } from "react";
 
-// import { pressHand, pressText } from "./assets";
-
 import { motion } from "framer-motion";
 import "./stars.css";
-import { SkewScroll, SmoothScroll } from "./hoc";
+import { SmoothScroll } from "./hoc";
 import { debounce } from "./utils/functions";
 import { AnimatePresence } from "framer-motion";
 import { Mask } from "./Mask";
@@ -70,23 +67,6 @@ export const App = () => {
 
   return (
     <>
-      {/* <div className="fixed bottom-0 left-1/2 z-50 flex h-[120px] w-full -translate-x-1/2 bg-gradient-to-t from-tertiary via-tertiary to-transparent sm:hidden">
-        <button onClick={() => setFull(!isFull)} className="w-full">
-          <img
-            src={pressHand}
-            alt=""
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          />
-          <img
-            src={pressText}
-            alt=""
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          />
-        </button>
-      </div> */}
-      {/* <div>
-        <Cursor />
-      </div> */}
       <AnimatePresence mode="wait">
         {isLoading && (
           <>
@@ -109,16 +89,14 @@ export const App = () => {
             </div>
             <Social />
             <SmoothScroll>
-              <SkewScroll>
-                <Hero />
-                <div className="overflow-hidden bg-slate-100 transition-all duration-300 dark:bg-primary">
-                  <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat py-12">
-                    <About />
-                  </div>
-                  <Experience />
-                  <Blogs />
+              <Hero />
+              <div className="overflow-hidden bg-slate-100 transition-all duration-300 dark:bg-primary">
+                <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat py-12">
+                  <About />
                 </div>
-              </SkewScroll>
+                <Experience />
+                <Blogs />
+              </div>
               <div className="overflow-hidden">
                 <div id="stars"></div>
                 <div id="stars2"></div>

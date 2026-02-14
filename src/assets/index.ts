@@ -11,6 +11,7 @@ import streetVendors from "./company/sv.png";
 import attendance from "./company/attendance.png";
 import pressHand from "./press-hand.svg";
 import pressText from "./press-text.svg";
+import propel from "./propel.svg";
 
 export {
   logo,
@@ -25,4 +26,5 @@ export {
   attendance,
   pressHand,
   pressText,
+  propel,
 };
