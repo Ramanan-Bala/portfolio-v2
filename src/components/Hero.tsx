@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { MagneticEffect, WavyText } from "../hoc";
-import { Box } from ".";
 import { AuroraBackground } from ".";
+import { MagneticEffect, WavyText } from "../hoc";
+import { styles } from "../styles";
 // import { Text } from "./InfiniteText";
 
 export const Hero = () => {

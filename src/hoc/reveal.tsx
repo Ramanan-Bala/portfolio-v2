@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 interface Props {
-  children: JSX.Element;
+  children: React.ReactElement;
   width?: "fit-content" | "1009";
 }
 export const Reveal = ({ children, width = "fit-content" }: Props) => {
